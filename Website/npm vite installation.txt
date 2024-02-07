@@ -1,5 +1,0 @@
-npm create vite@latest 
-select js+swc 
-cd filename
-npm install
-npm run dev
