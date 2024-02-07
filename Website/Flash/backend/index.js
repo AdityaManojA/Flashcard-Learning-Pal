@@ -1,6 +1,7 @@
 const express=require('express')
 const cors=require('cors')
 const bodyParser = require('body-parser')
+const router =require ("./routes/router")
 
 const app=express()
 
@@ -16,7 +17,9 @@ const corsOptions={
   }
 app.use(cors(corsOptions))
 
+app.use('/',router)
+
 const port=5174
 const server=app.listen(port,()=>{
-    console.log('Server running on port ${port}')
+    console.log('Server running on port 5174')
 })
