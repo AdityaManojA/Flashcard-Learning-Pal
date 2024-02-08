@@ -75,6 +75,8 @@ body {
 .flashcard {
   color: F2E9E4;
   text-decoration: none;
+  text-align: left;
+ 
 }
 h1 a {
   color: #F2E9E4;

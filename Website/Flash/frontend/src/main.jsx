@@ -11,6 +11,10 @@ import JavaScriptPage from './JavaScriptPage.jsx';
 import ModerateQuizPython from './ModerateQuizPython.jsx';
 import BeginnerQuizPython from './BeginnerQuizPython.jsx';
 import ExpertQuizPython from './ExpertQuizPython.jsx';
+import ModerateQuizJS from './ModerateQuizJS.jsx';
+import BeginnerQuizJS from './BeginnerQuizJS.jsx';
+import ExpertQuizJS from './ExpertQuizJS.jsx';
+
 import './index.css';
 
 function Navbar() {
@@ -43,6 +47,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/python/moderate" element={<ModerateQuizPython />} />
         <Route path="/courses/python/expert" element={<ExpertQuizPython />} />
         <Route path="/courses/javascript" element={<JavaScriptPage />} />
+        <Route path="/courses/javascript/beginner" element={<BeginnerQuizJS />} /> 
+        <Route path="/courses/javascript/moderate" element={<ModerateQuizJS />} />
+        <Route path="/courses/javascript/expert" element={<ExpertQuizJS />} />
+
         <Route path="/courses/java" element={<JavaPage />} />
       </Routes>
     </Router>

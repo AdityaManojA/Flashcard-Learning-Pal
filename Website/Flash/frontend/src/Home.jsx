@@ -1,12 +1,12 @@
 import './App.css';
 import React from 'react';
-import Courses from './Courses.jsx';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function App() {
   return (
     <div className='home-page'>
       <h1 className='welcome'>
+      <br></br>
         Welcome to FLASH CARD PAL
       </h1>
       <p className='welcome'>Start your journey to learn a new programming language today.</p>

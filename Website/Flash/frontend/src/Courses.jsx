@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './App.css';
 
 const coursesData = [
-  { name: 'Python', level: 'Join Quiz', route: 'python' },
-  { name: 'JavaScript', level: 'Join Quiz', route: 'javascript' },
-  { name: 'Java', level: 'Join Quiz', route: 'java' },
+  { name: 'Python', level: 'Join Python Quiz', route: 'python' },
+  { name: 'JavaScript', level: 'Join JS Quiz', route: 'javascript' },
+  { name: 'Java', level: 'Join Java Quiz', route: 'java' },
 ];
 
 function Courses() {
