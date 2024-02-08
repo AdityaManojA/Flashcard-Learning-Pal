@@ -1,0 +1,25 @@
+.python-page {
+    margin: 20px;
+  }
+  
+  .difficulty-levels {
+    margin-bottom: 20px;
+  }
+  
+  .difficulty-levels button {
+    margin-right: 10px;
+  }
+  
+  .question-section {
+    margin-bottom: 20px;
+  }
+  
+  .question-count {
+    font-weight: bold;
+  }
+  
+  .answer-options button {
+    display: block;
+    margin-top: 5px;
+  }
+  
