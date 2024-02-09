@@ -14,6 +14,9 @@ import ExpertQuizPython from './ExpertQuizPython.jsx';
 import ModerateQuizJS from './ModerateQuizJS.jsx';
 import BeginnerQuizJS from './BeginnerQuizJS.jsx';
 import ExpertQuizJS from './ExpertQuizJS.jsx';
+import ModerateQuizJava from './ModerateQuizJava.jsx';
+import BeginnerQuizJava from './BeginnerQuizJava.jsx';
+import ExpertQuizJava from './ExpertQuizJava.jsx';
 
 import './index.css';
 
@@ -50,6 +53,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/javascript/beginner" element={<BeginnerQuizJS />} /> 
         <Route path="/courses/javascript/moderate" element={<ModerateQuizJS />} />
         <Route path="/courses/javascript/expert" element={<ExpertQuizJS />} />
+        <Route path="/courses/javas/beginner" element={<BeginnerQuizJava />} /> 
+        <Route path="/courses/java/moderate" element={<ModerateQuizJava />} />
+        <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
 
         <Route path="/courses/java" element={<JavaPage />} />
       </Routes>
