@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Q1 from '../../backend/q1'; // Import the Q1 API using the relative path
+import Q1 from '../../backend/q1'; 
 
 function BeginnerQuizPython() {
   const [questions, setQuestions] = useState([]);
@@ -8,9 +8,9 @@ function BeginnerQuizPython() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set questions to the imported Q1 API
+
     setQuestions(Q1);
-    // Set loading to false since data is already available
+  
     setLoading(false);
   }, []);
 
