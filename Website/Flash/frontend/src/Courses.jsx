@@ -6,6 +6,9 @@ const coursesData = [
   { name: 'Python', level: 'Join Python Quiz', route: 'python' },
   { name: 'JavaScript', level: 'Join JS Quiz', route: 'javascript' },
   { name: 'Java', level: 'Join Java Quiz', route: 'java' },
+  { name: 'C', level: 'Join C Quiz', route: 'C' },
+  { name: 'HTML', level: 'Join HTML Quiz', route: 'HTML' },
+
 ];
 
 function Courses() {

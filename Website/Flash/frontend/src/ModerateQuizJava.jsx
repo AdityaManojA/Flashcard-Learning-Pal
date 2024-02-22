@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Java.css';
+import './Python.css';
 
 function ModerateQuizJava() {
   const questions = [

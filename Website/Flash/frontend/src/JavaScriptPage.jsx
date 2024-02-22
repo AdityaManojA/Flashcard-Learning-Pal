@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BeginnerQuizJS from './BeginnerQuizJS';
 import ModerateQuizJS from './ModerateQuizJS';
 import ExpertQuizJS from './ExpertQuizJS';
-import './JS.css'; // Assuming you've renamed the CSS file to js.css
+import './Python.css'; 
 
 function JavaScriptPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);
@@ -12,23 +12,26 @@ function JavaScriptPage() {
   };
 
   return (
-    <div className='JavaScript-quiz'>
+    <div className='Python-quiz'>
       <h1 className='center'>JavaScript Quiz</h1>
-      <div className='button-container'>
-        {/* Only render buttons if no level is selected */}
-        {selectedLevel === null && (
-          <>
+      
+       
+        {selectedLevel === null ? (
+          <div className='button-container'>
             <button className='custom-button' onClick={() => handleLevelSelect('beginner')}>Beginner</button>
             <button className='custom-button' onClick={() => handleLevelSelect('moderate')}>Moderate</button>
             <button className='custom-button' onClick={() => handleLevelSelect('expert')}>Expert</button>
-          </>
-        )}
-      </div>
+          </div>
+        ) :(
+      <>
       {/* Render quiz component based on selectedLevel */}
       {selectedLevel === 'beginner' && <BeginnerQuizJS />}
       {selectedLevel === 'moderate' && <ModerateQuizJS />}
       {selectedLevel === 'expert' && <ExpertQuizJS />}
-    </div>
+      {selectedLevel === null && <p>Select a level to start the quiz.</p>}
+    </>
+        )}
+        </div>
   );
 }
 

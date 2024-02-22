@@ -14,20 +14,22 @@ function PythonPage() {
   return (
     <div className='Python-quiz'>
       <h1>Python Quiz</h1>
-      <div className='button-container'>
-        {/* Only render buttons if no level is selected */}
-        {selectedLevel === null && (
-          <>
-            <button className='custom-button' onClick={() => handleLevelSelect('beginner')}>Beginner</button>
-            <button className='custom-button' onClick={() => handleLevelSelect('moderate')}>Moderate</button>
-            <button className='custom-button' onClick={() => handleLevelSelect('expert')}>Expert</button>
-          </>
-        )}
-      </div>
-      {/* Render quiz component based on selectedLevel */}
-      {selectedLevel === 'beginner' && <BeginnerQuizPython />}
-      {selectedLevel === 'moderate' && <ModerateQuizPython />}
-      {selectedLevel === 'expert' && <ExpertQuizPython />}
+      
+      {selectedLevel === null ? (
+        <div className='button-container'>
+          <button className='custom-button' onClick={() => handleLevelSelect('beginner')}>Beginner</button>
+          <button className='custom-button' onClick={() => handleLevelSelect('moderate')}>Moderate</button>
+          <button className='custom-button' onClick={() => handleLevelSelect('expert')}>Expert</button>
+        </div>
+      ) : (
+        <>
+          {selectedLevel === 'beginner' && <BeginnerQuizPython />}
+          {selectedLevel === 'moderate' && <ModerateQuizPython />}
+          {selectedLevel === 'expert' && <ExpertQuizPython />}
+        </>
+      )}
+
+      {selectedLevel === null && <p>Select a level to start the quiz.</p>}
     </div>
   );
 }

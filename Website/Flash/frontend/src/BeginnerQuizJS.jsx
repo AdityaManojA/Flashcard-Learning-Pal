@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './JS.css';
+import './Python.css'; 
 
 function BeginnerQuizJS() {
   const questions = [

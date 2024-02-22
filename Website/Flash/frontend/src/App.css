@@ -319,19 +319,21 @@
   }
   
   .language-container {
+    justify-content: center;
+    align-items: center !important;
     display: inline-block;
     padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 20px;
-    align-items: center;
-    
+    margin-bottom: 10px;
+    width: 13.5%
   }
+
+
   .courses-container{
-    padding: 0%;
-    height: 50%;
-    margin-top: 0;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   }
 
   h2{
