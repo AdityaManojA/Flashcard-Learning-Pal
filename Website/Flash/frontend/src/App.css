@@ -43,17 +43,22 @@
   }
   
   .welcome {
-    color: #4a4e69;
+    color:  #F2E9E4;
   }
   
   .course {
     padding: 5%;
   }
-  
+  span{
+    text-decoration: none;
+  }
+  button{
+    text-decoration: none;
+  }
   .ui-btn {
     --btn-default-bg: rgb(41, 41, 41);
     --btn-padding: 15px 20px;
-    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-hover-bg: rgb(0, 0, 0);
     --btn-transition: .3s;
     --btn-letter-spacing: .1rem;
     --btn-animation-duration: 1.2s;
@@ -61,7 +66,7 @@
     --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
     --hover-btn-color: #fac921;
     --default-btn-color: #fff;
-    --font-size: 16px;
+    --font-size: 20px;
     /* 👆 this field should not be empty */
     --font-weight: 600;
     --font-family: Menlo, Roboto Mono, monospace;
@@ -338,7 +343,6 @@
 
   h2{
     text-align: center;
-    color: #22223B;
+    color:#F2E9E4;
     padding :15px;
   }
-  

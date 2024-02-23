@@ -21,7 +21,7 @@
 
 
 body {
-  background-color:#F2E9E4;
+  background-color:#000000ed;
   margin: 0;
   padding: 0;
   font-family: "Poppins";
@@ -41,6 +41,7 @@ body {
   align-items: center;
   margin: 0 auto;
   max-width: 1200px;
+  padding: 1px;
 }
 
 .navbar-logo {

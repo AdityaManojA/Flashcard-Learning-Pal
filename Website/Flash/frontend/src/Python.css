@@ -1,5 +1,6 @@
 .Python-quiz{
     text-align: center;
+    padding: 40px;
 }
 .button-container {
   margin-top: 100px;
@@ -8,6 +9,9 @@
     gap: 50px;
     padding: 5%;
   }
+h2{
+  padding-bottom: 20px;
+}
 .custom-button {
     background: #fbca1f;
     font-family: inherit;
@@ -19,7 +23,9 @@
     box-shadow: 0.1em 0.1em;
     cursor: pointer;
   }
-  
+  p{
+    color: #F2E9E4;
+  }
   .custom-button:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
@@ -32,6 +38,7 @@
   
 .question{
     padding: 3%;
+    color: #F2E9E4;
 }
 .options{
     padding: 5%;
@@ -42,10 +49,13 @@
 }
 h1{
   text-align: center;
+  padding: 10;
+  color: #F2E9E4;
 }
 
 
 .end-message{
   padding: 20px;
   font-size:30px;
+  color: #F2E9E4;
  }

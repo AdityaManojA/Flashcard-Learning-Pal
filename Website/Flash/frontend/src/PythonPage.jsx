@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BeginnerQuizPython from './BeginnerQuizPython';
 import ModerateQuizPython from './ModerateQuizPython';
 import ExpertQuizPython from './ExpertQuizPython';
-import './python.css';
+import './Python.css';
 
 function PythonPage() {
   const [selectedLevel, setSelectedLevel] = useState(null);

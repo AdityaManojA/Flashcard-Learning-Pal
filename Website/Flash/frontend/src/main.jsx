@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home.jsx';
 import Courses from './Courses.jsx';
 import About from './About.jsx';
@@ -17,8 +17,10 @@ import ExpertQuizJS from './ExpertQuizJS.jsx';
 import ModerateQuizJava from './ModerateQuizJava.jsx';
 import BeginnerQuizJava from './BeginnerQuizJava.jsx';
 import ExpertQuizJava from './ExpertQuizJava.jsx';
-
+import Login from './Login.jsx';
+import BackgroundAnimation from './BackgroundAnimation.jsx'; // Import the BackgroundAnimation component
 import './index.css';
+import './Styles.css'; 
 
 function Navbar() {
   return (
@@ -40,8 +42,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Navbar />
+      <BackgroundAnimation /> 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+      
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -56,11 +62,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/javas/beginner" element={<BeginnerQuizJava />} /> 
         <Route path="/courses/java/moderate" element={<ModerateQuizJava />} />
         <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
-
         <Route path="/courses/java" element={<JavaPage />} />
       </Routes>
     </Router>
   </React.StrictMode>
 );
 
-export default Home;
+export default Login;
