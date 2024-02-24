@@ -1,5 +1,6 @@
 import React from 'react';
-import './login.css'; // You can add your additional CSS styles here
+import './login.css'; 
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -10,19 +11,19 @@ const Login = () => {
         <h3>Login Here</h3>
 
         <label htmlFor="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username" />
+        <input type="text" placeholder="Email" id="username" />
 
         <label htmlFor="password">Password</label>
         <input type="password" placeholder="Password" id="password" />
 
-        <button>Log In</button>
-        <div className="social">
-          <div className="go"><i className="fab fa-google"></i> Google</div>
+        <Link to='/home' className="login-button"> 
+          Log In
+        </Link>
+
+        <div className="signup-link">
+          <p>Don't have an account? <a href="/signup">Sign up</a></p>
         </div>
       </form>
-      <div className="signup-link">
-        <p>Don't have an account? <a href="/Signup">Sign up</a></p>
-      </div>
     </div>
   );
 };
