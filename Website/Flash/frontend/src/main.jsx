@@ -18,6 +18,7 @@ import ModerateQuizJava from './ModerateQuizJava.jsx';
 import BeginnerQuizJava from './BeginnerQuizJava.jsx';
 import ExpertQuizJava from './ExpertQuizJava.jsx';
 import Login from './Login.jsx';
+import Signup from './Signup.jsx'
 import BackgroundAnimation from './BackgroundAnimation.jsx'; // Import the BackgroundAnimation component
 import './index.css';
 import './Styles.css'; 
@@ -63,6 +64,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/java/moderate" element={<ModerateQuizJava />} />
         <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
         <Route path="/courses/java" element={<JavaPage />} />
+        <Route path="/Signup" element={<Signup />} />
       </Routes>
     </Router>
   </React.StrictMode>

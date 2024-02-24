@@ -1,25 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './login.css'
+import React, { useState } from 'react';
+import './login.css';
+import '/card.svg'
 
-export default function Login() {
+
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Your login logic here
+  };
+
   return (
-    <div className="login-container">
-      <div className="login-form">
-        <h2>Login</h2>
-        <form>
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+    <div className="screen-1">
+      <img src={cardSvg} alt="Card" /> {/* Render the SVG using an <img> tag */}
+      <div className="email">
+        <label htmlFor="email">Email Address</label>
+        <div className="sec-2">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input
+            type="email"
+            name="email"
+            placeholder="Username@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className="password">
+        <label htmlFor="password">Password</label>
+        <div className="sec-2">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input
+            className="pas"
+            type="password"
+            name="password"
+            placeholder="············"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <ion-icon className="show-hide" name="eye-outline"></ion-icon>
+        </div>
+      </div>
+      <button className="login" onClick={handleSubmit}>
+        Login
+      </button>
+      <div className="footer">
+        <span>Sign up</span>
+        <span>Forgot Password?</span>
       </div>
     </div>
   );
-}
+};
+
+export default Login;
