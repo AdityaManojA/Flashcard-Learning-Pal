@@ -45,7 +45,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BackgroundAnimation /> 
       <Routes>
       
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
