@@ -1,54 +1,27 @@
-import React, { useState } from 'react';
-import './login.css';
-import '/card.svg'
-
+import React from 'react';
+import './login.css'; // You can add your additional CSS styles here
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Your login logic here
-  };
-
   return (
-    <div className="screen-1">
-      <img src={cardSvg} alt="Card" /> {/* Render the SVG using an <img> tag */}
-      <div className="email">
-        <label htmlFor="email">Email Address</label>
-        <div className="sec-2">
-          <ion-icon name="mail-outline"></ion-icon>
-          <input
-            type="email"
-            name="email"
-            placeholder="Username@gmail.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="password">
+    <div className="background">
+      <div className="shape"></div>
+      <div className="shape"></div>
+      <form>
+        <h3>Login Here</h3>
+
+        <label htmlFor="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username" />
+
         <label htmlFor="password">Password</label>
-        <div className="sec-2">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <input
-            className="pas"
-            type="password"
-            name="password"
-            placeholder="············"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <ion-icon className="show-hide" name="eye-outline"></ion-icon>
+        <input type="password" placeholder="Password" id="password" />
+
+        <button>Log In</button>
+        <div className="social">
+          <div className="go"><i className="fab fa-google"></i> Google</div>
         </div>
-      </div>
-      <button className="login" onClick={handleSubmit}>
-        Login
-      </button>
-      <div className="footer">
-        <span>Sign up</span>
-        <span>Forgot Password?</span>
+      </form>
+      <div className="signup-link">
+        <p>Don't have an account? <a href="/Signup">Sign up</a></p>
       </div>
     </div>
   );
