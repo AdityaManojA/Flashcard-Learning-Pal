@@ -16,7 +16,7 @@ const Login = () => {
     <div className="screen-1">
       <img src={cardSvg} alt="Card" /> {/* Render the SVG using an <img> tag */}
       <div className="email">
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email">Email</label>
         <div className="sec-2">
           <ion-icon name="mail-outline"></ion-icon>
           <input
