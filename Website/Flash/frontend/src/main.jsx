@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Home from './Home.jsx';
 import Courses from './Courses.jsx';
 import About from './About.jsx';
@@ -19,15 +19,26 @@ import BeginnerQuizJava from './BeginnerQuizJava.jsx';
 import ExpertQuizJava from './ExpertQuizJava.jsx';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx'
-import BackgroundAnimation from './BackgroundAnimation.jsx'; // Import the BackgroundAnimation component
+import BackgroundAnimation from './BackgroundAnimation.jsx';
 import './index.css';
 import './Styles.css'; 
 
 function Navbar() {
+  const location = useLocation();
+
+ 
+  const isLoginPage = location.pathname === '/login';
+  const isSignupPage = location.pathname === '/signup';
+
+  // Render the navbar only if the current location is not '/login' or '/signup'
+  if (isLoginPage || isSignupPage) {
+    return null; // Render nothing
+  }
+
   return (
     <nav className="navbar">
       <div className="container">
-        <h1 className='flashcard'><a href="/">FLASH CARD PAL</a></h1>
+        <h1 className='flashcard'><a href="/home">FLASH CARD PAL</a></h1>
         <ul className="navbar-links">
           <li><a href="/">Home</a></li>
           <li><a href="/courses">Courses</a></li>
@@ -45,7 +56,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Navbar />
       <BackgroundAnimation /> 
       <Routes>
-      
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
@@ -60,14 +70,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/javascript/beginner" element={<BeginnerQuizJS />} /> 
         <Route path="/courses/javascript/moderate" element={<ModerateQuizJS />} />
         <Route path="/courses/javascript/expert" element={<ExpertQuizJS />} />
-        <Route path="/courses/javas/beginner" element={<BeginnerQuizJava />} /> 
+        <Route path="/courses/java/beginner" element={<BeginnerQuizJava />} /> 
         <Route path="/courses/java/moderate" element={<ModerateQuizJava />} />
         <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
         <Route path="/courses/java" element={<JavaPage />} />
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   </React.StrictMode>
 );
-
-export default Login;
