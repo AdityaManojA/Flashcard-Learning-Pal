@@ -18,10 +18,13 @@ import ModerateQuizJava from './ModerateQuizJava.jsx';
 import BeginnerQuizJava from './BeginnerQuizJava.jsx';
 import ExpertQuizJava from './ExpertQuizJava.jsx';
 import Login from './Login.jsx';
-import Signup from './Signup.jsx'
+import Signup from './Signup.jsx';
+import Blog from './blog.jsx';
+import AI from './AI.jsx';
 import BackgroundAnimation from './BackgroundAnimation.jsx';
 import './index.css';
 import './Styles.css'; 
+
 
 function Navbar() {
   const location = useLocation();
@@ -44,6 +47,7 @@ function Navbar() {
           <li><a href="/courses">Courses</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
         </ul>
       </div>
     </nav>
@@ -62,6 +66,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses" element={<Courses />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/AI" element={<AI />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/courses/python" element={<PythonPage />} /> 
         <Route path="/courses/python/beginner" element={<BeginnerQuizPython />} /> 
         <Route path="/courses/python/moderate" element={<ModerateQuizPython />} />
@@ -75,6 +81,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
         <Route path="/courses/java" element={<JavaPage />} />
         <Route path="/signup" element={<Signup />} />
+
       </Routes>
     </Router>
   </React.StrictMode>
