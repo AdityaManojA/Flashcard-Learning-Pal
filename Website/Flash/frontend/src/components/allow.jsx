@@ -27,7 +27,10 @@ export const Allow = () => {
       return; 
     }
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userId = userCredential.user.uid; // Extract the user ID
+      // Store the user ID in localStorage
+      localStorage.setItem('userId', userId);
       setLoggedIn(true); // Set login status to true on successful sign-in
     } catch (err) {
       console.error("Sign-in error:", err);

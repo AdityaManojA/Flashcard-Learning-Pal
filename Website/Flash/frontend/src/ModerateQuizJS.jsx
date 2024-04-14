@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
-import './Python.css';
+import { collection, addDoc, Timestamp } from 'firebase/firestore'; // Import Timestamp along with collection and addDoc
+import { db } from './config/firebase'; // Assuming you have a Firebase configuration file
 
-function ModerateQuizJS() {
+function ModerateQuizJS({ userId }) {
+  const quizName = "ModerateQuizJS"; // Define the name of the quiz
+  const totalQuestions = 10; // Specify the total number of questions in the quiz
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [quizEnded, setQuizEnded] = useState(false); // State to track if quiz has ended
+
   const questions = [
     {
       question: '1. What does the `let` keyword do in JavaScript?',
@@ -80,31 +88,56 @@ function ModerateQuizJS() {
     },
   ];
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
-
-  const handleAnswerSelect = (selectedAnswer) => {
-    const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
-    if (isCorrect) {
-      setScore(prevScore => prevScore + 1);
+  const handleAnswerSelect = async (selectedOptionIndex) => {
+    const selectedAnswer = questions[currentQuestionIndex].options[selectedOptionIndex];
+  
+    if (!selectedAnswer) {
+      console.error("Selected answer is undefined or null.");
+      return; // Exit early if selected answer is invalid
     }
-    setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+  
+    const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
+  
+    // Update the score using a callback function
+    setScore(prevScore => isCorrect ? prevScore + 1 : prevScore);
+  
+    if (currentQuestionIndex === totalQuestions - 1) {
+      setQuizEnded(true);
+      try {
+        // Store quiz results in Firestore
+        await addDoc(collection(db, "quizResults"), {
+          userId: userId, // Include the userId
+          quizName: quizName,
+          finalScore: score, // Use the updated score here
+          timestamp: Timestamp.fromDate(new Date()),
+        });
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    } else {
+      // Delay the update of currentQuestionIndex to ensure it's updated correctly
+      setTimeout(() => {
+        setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      }, 100); // Delay for 100 milliseconds
+    }
   };
-
+  
   return (
     <div className='JavaScript-quiz'>
       <div className='quiz-container'>
-        {currentQuestionIndex < questions.length ? (
+        {currentQuestionIndex < totalQuestions && !quizEnded ? (
           <>
             <div className='question'>{questions[currentQuestionIndex].question}</div>
             <div className='options'>
               {questions[currentQuestionIndex].options.map((option, index) => (
-                <button key={index} className='custom-button' onClick={() => handleAnswerSelect(option)}>{option}</button>
+                <button key={index} className='custom-button' onClick={() => handleAnswerSelect(index)}>{option}</button>
               ))}
             </div>
           </>
         ) : (
-          <div className='end-message'>Quiz completed! Your score: {score} out of {questions.length}</div>
+          <div className='end-message'>
+            {quizEnded ? `Quiz completed! Your score: ${score} out of ${totalQuestions}` : null}
+          </div>
         )}
       </div>
     </div>

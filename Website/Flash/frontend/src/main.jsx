@@ -24,6 +24,7 @@ import AI from './AI.jsx';
 import BackgroundAnimation from './BackgroundAnimation.jsx';
 import './index.css';
 import './Styles.css'; 
+import Userdata from './Userdata.jsx';
 
 
 function Navbar() {
@@ -48,7 +49,7 @@ function Navbar() {
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li><a href="/AI">AI CHAT</a></li>
+          <li><a href="/userdata">Profile</a></li>
         </ul>
       </div>
     </nav>
@@ -82,6 +83,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/java/expert" element={<ExpertQuizJava />} />
         <Route path="/courses/java" element={<JavaPage />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/userdata" element={<Userdata/>}/>
 
       </Routes>
     </Router>
