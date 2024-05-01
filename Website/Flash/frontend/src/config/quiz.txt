@@ -1,230 +1,930 @@
-    {
-      question: '1. What is the result of 5 * 3?',
-      options: ['8', '15', '53', 'Error'],
-      correctAnswer: '15'
+  question: '1. What does "JS" stand for in JavaScript?',
+      options: ['Java Source', 'JavaScript', 'Java Script', 'Joint Source'],
+      correctAnswer: 'JavaScript'
     },
     {
-      question: '2. What will the following code output?\n\nfruits = ["apple", "banana", "cherry"]\nprint(fruits[-1])',
-      options: ['banana', 'apple', 'cherry', 'IndexError'],
-      correctAnswer: 'cherry'
+      question: '2. Which symbol is used for single-line comments in JavaScript?',
+      options: ['//', '#', '/* */', '--'],
+      correctAnswer: '//'
     },
     {
-      question: '3. What is the correct way to declare a tuple in Python?',
-      options: ['(1, 2, 3)', '[1, 2, 3]', '{1, 2, 3}', '<1, 2, 3>'],
-      correctAnswer: '(1, 2, 3)'
-    },
-    {
-      question: '4. What will be the output of the following code snippet?\n\nx = "python"\nprint(len(x))',
-      options: ['5', '6', '7', 'Error'],
-      correctAnswer: '6'
-    },
-    {
-      question: '5. Which of the following is a correct way to comment multiple lines in Python?',
-      options: ['# Comment', '/* Comment */', '// Comment', '"""""" Comment """"""'],
-      correctAnswer: '"""""" Comment """"""'
-    },
-    {
-      question: '6. What will the following code output?\n\nx = 10\ny = 5\nprint(x % y)',
-      options: ['2', '0', '1', 'Error'],
-      correctAnswer: '0'
-    },
-    {
-      question: '7. What will be the output of the following code snippet?\n\nx = "hello"\nprint(x[1:3])',
-      options: ['h', 'e', 'el', 'Error'],
-      correctAnswer: 'el'
-    },
-    {
-      question: '8. What is the result of the expression (10 + 3) / 2?',
-      options: ['6', '6.5', '7', 'Error'],
-      correctAnswer: '6.5'
-    },
-    {
-      question: '9. Which of the following is used to generate random numbers in Python?',
-      options: ['rand()', 'random.randint()', 'randomNumber()', 'randomNum()'],
-      correctAnswer: 'random.randint()'
-    },
-    {
-      question: '10. What will be the output of the following code snippet?\n\nx = [1, 2, 3]\nx.append(4)\nprint(x)',
-      options: ['[1, 2, 3, 4]', '[1, 2, 3]', '[1, 2, 3, [4]]', 'Error'],
-      correctAnswer: '[1, 2, 3, 4]'
-    },
-    {
-      question: '11. What is the output of the following code snippet?\n\nx = "Hello"\nprint(x.lower())',
-      options: ['hello', 'HELLO', 'hELLO', 'Error'],
-      correctAnswer: 'hello'
-    },
-    {
-      question: '12. What will the following code output?\n\nx = [1, 2, 3, 4]\nprint(x[-2])',
-      options: ['3', '4', '2', 'Error'],
-      correctAnswer: '3'
-    },
-    {
-      question: '13. What is the correct way to check if a key exists in a dictionary in Python?',
-      options: ['key.exists()', 'exists(key)', 'key in dict', 'key.exists(dict)'],
-      correctAnswer: 'key in dict'
-    },
-    {
-      question: '14. What will the following code output?\n\nx = 10\ny = "20"\nprint(x + int(y))',
-      options: ['30', '1020', 'Error', '102'],
-      correctAnswer: '30'
-    },
-    {
-      question: '15. Which of the following is used to format strings in Python?',
-      options: ['format()', 'printf()', 'String.format()', 'formatString()'],
-      correctAnswer: 'format()'
-    },
-
-
-
-
-
-    moderatejs
-
-        {
-      question: '1. What does the `let` keyword do in JavaScript?',
-      options: ['Declares a block-scoped variable', 'Declares a global variable', 'Declares a constant variable', 'Declares a function'],
-      correctAnswer: 'Declares a block-scoped variable'
-    },
-    {
-      question: '2. How do you declare a function expression in JavaScript?',
-      options: ['function myFunction() {}', 'myFunction = function() {}', 'const myFunction = function() {}', 'let myFunction = function() {}'],
-      correctAnswer: 'const myFunction = function() {}'
-    },
-    {
-      question: '3. What is the purpose of the `this` keyword in JavaScript?',
-      options: ['Refers to the current object', 'Refers to the parent object', 'Refers to the global object', 'Refers to the child object'],
-      correctAnswer: 'Refers to the current object'
-    },
-    {
-      question: '4. What is the result of `console.log("5" - 3)`?',
-      options: ['2', '8', '53', 'Error'],
-      correctAnswer: '2'
-    },
-    {
-      question: '5. Which method is used to add elements to the end of an array in JavaScript?',
-      options: ['push()', 'pop()', 'shift()', 'unshift()'],
-      correctAnswer: 'push()'
-    },
-    {
-      question: '6. What does the `typeof` operator return for an array in JavaScript?',
-      options: ['array', 'object', 'array', 'string'],
+      question: '3. What is the output of `console.log(typeof [])`?',
+      options: ['Array', 'object', 'undefined', 'null'],
       correctAnswer: 'object'
     },
     {
-      question: '7. How do you check if a variable is an array in JavaScript?',
-      options: ['typeof', 'isArray()', 'instanceof', 'isArray'],
-      correctAnswer: 'Array.isArray()'
+      question: '4. What will be the result of the following code: `5 + "5"`?',
+      options: ['55', '10', '5', 'Error'],
+      correctAnswer: '55'
     },
     {
-      question: '8. What is the result of `console.log(NaN === NaN)`?',
+      question: '5. Which keyword is used to declare a variable in JavaScript?',
+      options: ['var', 'int', 'String', 'let'],
+      correctAnswer: 'var'
+    },
+    {
+      question: '6. What is the purpose of the `let` keyword in JavaScript?',
+      options: ['Declaring constants', 'Declaring functions', 'Declaring variables', 'Loop iteration'],
+      correctAnswer: 'Declaring variables'
+    },
+    {
+      question: '7. What is the output of `console.log(3 === "3")`?',
       options: ['true', 'false', 'Error', 'null'],
       correctAnswer: 'false'
     },
     {
-      question: '9. What does the `!==` operator do in JavaScript?',
-      options: ['Not equal value or not equal type', 'Equal value and equal type', 'Not equal value but equal type', 'Equal value but not equal type'],
-      correctAnswer: 'Not equal value or not equal type'
+      question: '8. Which of the following is NOT a JavaScript data type?',
+      options: ['number', 'float', 'boolean', 'string'],
+      correctAnswer: 'float'
     },
     {
-      question: '10. What is the result of `console.log(Boolean("false"))`?',
+      question: '9. What does NaN stand for in JavaScript?',
+      options: ['Not a Number', 'No and No', 'New and New', 'None and None'],
+      correctAnswer: 'Not a Number'
+    },
+    {
+      question: '10. What is the output of `console.log(Boolean("false"))`?',
       options: ['true', 'false', 'Error', 'null'],
       correctAnswer: 'true'
     },
     {
-      question: '11. How do you convert a string to uppercase in JavaScript?',
-      options: ['toUpperCase()', 'toUppercase()', 'toUpperCaseCase()', 'upperCase()'],
-      correctAnswer: 'toUpperCase()'
+      question: '11. Which function is used to parse a string to an integer in JavaScript?',
+      options: ['parseInt()', 'parseFloat()', 'String.toInt()', 'Number.parseInt()'],
+      correctAnswer: 'parseInt()'
     },
     {
-      question: '12. What is the output of `console.log(Math.floor(3.9))`?',
-      options: ['3', '4', '3.9', 'Error'],
-      correctAnswer: '3'
+      question: '12. What is the purpose of the `this` keyword in JavaScript?',
+      options: ['Refers to the current object', 'Refers to the parent object', 'Refers to the global object', 'Refers to the child object'],
+      correctAnswer: 'Refers to the current object'
     },
     {
-      question: '13. What does the `concat()` method do in JavaScript?',
-      options: ['Joins two or more arrays', 'Returns the first element of an array', 'Sorts the elements of an array', 'Returns a new array with elements added to it'],
-      correctAnswer: 'Joins two or more arrays'
+      question: '13. What is the result of `typeof undefined`?',
+      options: ['undefined', 'object', 'null', 'string'],
+      correctAnswer: 'undefined'
     },
     {
-      question: '14. What is the result of `console.log(parseInt("10px"))`?',
-      options: ['10', 'NaN', 'Error', 'null'],
-      correctAnswer: '10'
+      question: '14. Which built-in method removes the last element from an array and returns that element?',
+      options: ['pop()', 'shift()', 'push()', 'unshift()'],
+      correctAnswer: 'pop()'
     },
     {
-      question: '15. Which event is triggered when the user scrolls in JavaScript?',
-      options: ['scroll', 'scrollEvent', 'scrolling', 'onScroll'],
-      correctAnswer: 'scroll'
+      question: '15. What is the output of `console.log(0 == "0")`?',
+      options: ['true', 'false', 'Error', 'null'],
+      correctAnswer: 'true'
     },
 
+    const pythonQuestions = [
+    {
+      question: '1. What is the correct way to comment a single line in Python?',
+      options: ['#', '//', '/* */', '--'],
+      correctAnswer: '#'
+    },
+    {
+      question: '2. How do you declare a variable in Python?',
+      options: ['var', 'int', 'String', 'None of the above'],
+      correctAnswer: 'None of the above'
+    },
+    {
+      question: '3. What is the output of `print(type([]))`?',
+      options: ['List', 'Tuple', 'Dict', 'None of the above'],
+      correctAnswer: 'List'
+    },
+    {
+      question: '4. What will be the result of the following code: `5 + "5"` in Python?',
+      options: ['55', '10', '5', 'Error'],
+      correctAnswer: 'Error'
+    },
+    {
+      question: '5. Which keyword is used to define a function in Python?',
+      options: ['def', 'function', 'define', 'func'],
+      correctAnswer: 'def'
+    },
+    {
+      question: '6. What is the purpose of the `for` loop in Python?',
+      options: ['Declaring constants', 'Declaring functions', 'Iterating over iterable objects', 'Loop iteration'],
+      correctAnswer: 'Iterating over iterable objects'
+    },
+    {
+      question: '7. What is the output of `print(3 == "3")`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'False'
+    },
+    {
+      question: '8. Which of the following is NOT a valid Python data type?',
+      options: ['float', 'double', 'boolean', 'str'],
+      correctAnswer: 'double'
+    },
+    {
+      question: '9. What does the `None` keyword represent in Python?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
+    },
+    {
+      question: '10. What is the output of `print(bool("false"))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '11. Which function is used to convert a string to an integer in Python?',
+      options: ['int()', 'float()', 'str()', 'None of the above'],
+      correctAnswer: 'int()'
+    },
+    {
+      question: '12. What is the purpose of the `self` keyword in Python?',
+      options: ['Refers to the current object', 'Refers to the parent object', 'Refers to the global object', 'Refers to the child object'],
+      correctAnswer: 'Refers to the current object'
+    },
+    {
+      question: '13. What is the result of `type(None)` in Python?',
+      options: ['NoneType', 'object', 'None', 'str'],
+      correctAnswer: 'NoneType'
+    },
+    {
+      question: '14. Which built-in method removes the last element from a list and returns it?',
+      options: ['pop()', 'remove()', 'append()', 'extend()'],
+      correctAnswer: 'pop()'
+    },
+    {
+      question: '15. What is the output of `print(0 == "0")` in Python?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'False'
+    },
+  ];
 
-    import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { auth } from '../config/firebase'; 
-import { signInWithEmailAndPassword } from 'firebase/auth';
 
-export const Auth = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loginClicked, setLoginClicked] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate(); // Replace useHistory with useNavigate
+const easyPythonQuestions = [
+    {
+      question: '1. What is Python?',
+      options: ['A snake species', 'A programming language', 'A type of pasta', 'A fruit'],
+      correctAnswer: 'A programming language'
+    },
+    {
+      question: '2. How do you print "Hello, World!" in Python?',
+      options: ['console.log("Hello, World!")', 'print("Hello, World!")', 'echo "Hello, World!"', 'printf("Hello, World!")'],
+      correctAnswer: 'print("Hello, World!")'
+    },
+    {
+      question: '3. What symbol is used for comments in Python?',
+      options: ['//', '#', '/* */', '--'],
+      correctAnswer: '#'
+    },
+    {
+      question: '4. Which of the following is a Python data type?',
+      options: ['number', 'int', 'boolean', 'All of the above'],
+      correctAnswer: 'All of the above'
+    },
+    {
+      question: '5. How do you declare a variable in Python?',
+      options: ['var', 'let', 'const', 'None of the above'],
+      correctAnswer: 'None of the above'
+    },
+    {
+      question: '6. What is the purpose of a `for` loop in Python?',
+      options: ['Declaring functions', 'Declaring variables', 'Iterating over iterable objects', 'Defining classes'],
+      correctAnswer: 'Iterating over iterable objects'
+    },
+    {
+      question: '7. What is the output of `print(3 == 3)`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '8. Which of the following is NOT a valid Python data structure?',
+      options: ['List', 'Dictionary', 'Tuple', 'Array'],
+      correctAnswer: 'Array'
+    },
+    {
+      question: '9. What does the `None` keyword represent in Python?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
+    },
+    {
+      question: '10. What is the output of `print(bool("True"))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+  ];
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+const easyPythonQuestions = [
+    {
+      question: '1. What is Python?',
+      options: ['A snake species', 'A programming language', 'A type of pasta', 'A fruit'],
+      correctAnswer: 'A programming language'
+    },
+    {
+      question: '2. How do you print "Hello, World!" in Python?',
+      options: ['console.log("Hello, World!")', 'print("Hello, World!")', 'echo "Hello, World!"', 'printf("Hello, World!")'],
+      correctAnswer: 'print("Hello, World!")'
+    },
+    {
+      question: '3. What symbol is used for comments in Python?',
+      options: ['//', '#', '/* */', '--'],
+      correctAnswer: '#'
+    },
+    {
+      question: '4. Which of the following is a Python data type?',
+      options: ['number', 'int', 'boolean', 'All of the above'],
+      correctAnswer: 'All of the above'
+    },
+    {
+      question: '5. How do you declare a variable in Python?',
+      options: ['var', 'let', 'const', 'None of the above'],
+      correctAnswer: 'None of the above'
+    },
+    {
+      question: '6. What is the purpose of a `for` loop in Python?',
+      options: ['Declaring functions', 'Declaring variables', 'Iterating over iterable objects', 'Defining classes'],
+      correctAnswer: 'Iterating over iterable objects'
+    },
+    {
+      question: '7. What is the output of `print(3 == 3)`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '8. Which of the following is NOT a valid Python data structure?',
+      options: ['List', 'Dictionary', 'Tuple', 'Array'],
+      correctAnswer: 'Array'
+    },
+    {
+      question: '9. What does the `None` keyword represent in Python?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
+    },
+    {
+      question: '10. What is the output of `print(bool("True"))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '11. What is the correct way to check if a value is in a list in Python?',
+      options: ['if x in list:', 'if x = list:', 'if x == list:', 'if x has list:'],
+      correctAnswer: 'if x in list:'
+    },
+    {
+      question: '12. How do you open a file in Python for reading?',
+      options: ['file.open("filename.txt", "r")', 'open("filename.txt", "r")', 'file.read("filename.txt")', 'read("filename.txt")'],
+      correctAnswer: 'open("filename.txt", "r")'
+    },
+    {
+      question: '13. Which built-in function is used to get the length of a list in Python?',
+      options: ['size()', 'count()', 'length()', 'len()'],
+      correctAnswer: 'len()'
+    },
+    {
+      question: '14. What is the result of `print(0 == False)`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '15. What is the output of `print("Python"[1:4])`?',
+      options: ['Py', 'yth', 'thon', 'P'],
+      correctAnswer: 'yth'
+    },
+  ];
 
-  const signIn = async () => {
-    setLoginClicked(true);
-    if (!email.trim() || !password.trim()) {
-      setError("Please fill all the fields.");
-      setTimeout(() => setError(""), 2000); 
-      return; 
-    }
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const userId = userCredential.user.uid; // Extract the user ID
-      // Optionally, you can store the user ID in localStorage or session storage for future use
-      localStorage.setItem('userId', userId);
-      // Redirect to the home page
-      navigate("/home"); // Use navigate function instead of history.push
-    } catch (err) {
-      console.error("Sign-in error:", err);
-      setError("Invalid email or password.");
-      setTimeout(() => setError(""), 2000);
-    }
-  };
 
-  return (
-    <div className="background">
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <form>
-        <h3>Sign up to FCP !</h3>
+const expertPythonQuestions = [
+    {
+      question: '1. What is the purpose of a lambda function in Python?',
+      options: ['To declare a variable', 'To create an anonymous function', 'To define a class', 'To import modules'],
+      correctAnswer: 'To create an anonymous function'
+    },
+    {
+      question: '2. What is the output of `print(2 ** 3 ** 2)`?',
+      options: ['64', '512', '72', '96'],
+      correctAnswer: '512'
+    },
+    {
+      question: '3. Which of the following is a correct way to open a file in Python and automatically close it after use?',
+      options: ['file.open("filename.txt", "r")', 'open("filename.txt", "r").close()', 'with open("filename.txt", "r") as file:', 'open("filename.txt", "r")'],
+      correctAnswer: 'with open("filename.txt", "r") as file:'
+    },
+    {
+      question: '4. What does the `zip()` function in Python do?',
+      options: ['Combines two lists into a dictionary', 'Returns a list of tuples, where each tuple contains the i-th element from each of the argument sequences', 'Unzips a file', 'Finds the longest common substring between two strings'],
+      correctAnswer: 'Returns a list of tuples, where each tuple contains the i-th element from each of the argument sequences'
+    },
+    {
+      question: '5. What is the purpose of the `__init__` method in Python classes?',
+      options: ['To initialize a variable', 'To define a constructor', 'To create a new instance of a class', 'To delete an object'],
+      correctAnswer: 'To define a constructor'
+    },
+    {
+      question: '6. How do you raise a custom exception in Python?',
+      options: ['throw CustomException()', 'raise CustomException()', 'exception CustomException()', 'raise_exception CustomException()'],
+      correctAnswer: 'raise CustomException()'
+    },
+    {
+      question: '7. What is the output of `print(list(range(0, -5, -1)))`?',
+      options: ['[0, -1, -2, -3, -4]', '[-1, -2, -3, -4]', '[0, -1, -2, -3, -4, -5]', '[]'],
+      correctAnswer: '[0, -1, -2, -3, -4]'
+    },
+    {
+      question: '8. What is the result of `print(4 // 3)`?',
+      options: ['1.33', '1.0', '1', '0.75'],
+      correctAnswer: '1'
+    },
+    {
+      question: '9. How do you remove an item from a set in Python?',
+      options: ['set.remove()', 'set.delete()', 'set.discard()', 'set.pop()'],
+      correctAnswer: 'set.discard()'
+    },
+    {
+      question: '10. What does the `super()` function do in Python?',
+      options: ['Calls a method from the superclass', 'Returns the superclass of a class', 'Creates a superclass', 'Calls a method from the subclass'],
+      correctAnswer: 'Calls a method from the superclass'
+    },
+    {
+      question: '11. What is the purpose of the `*args` and `**kwargs` in Python function definitions?',
+      options: ['To specify required arguments', 'To accept any number of positional and keyword arguments', 'To define default arguments', 'To access class attributes'],
+      correctAnswer: 'To accept any number of positional and keyword arguments'
+    },
+    {
+      question: '12. What is the output of `print(isinstance(3, object))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
+    },
+    {
+      question: '13. What does the `__str__` method do in Python?',
+      options: ['Converts an object to a string', 'Converts a string to an object', 'Compares two objects', 'Deletes an object'],
+      correctAnswer: 'Converts an object to a string'
+    },
+    {
+      question: '14. What is the purpose of the `@staticmethod` decorator in Python?',
+      options: ['To define a static method', 'To define a class method', 'To override a method', 'To inherit a method'],
+      correctAnswer: 'To define a static method'
+    },
+    {
+      question: '15. What is the output of `print([i for i in range(5) if i % 2 == 0])`?',
+      options: ['[0, 2, 4]', '[1, 3]', '[0, 1, 2, 3, 4]', '[2, 4]'],
+      correctAnswer: '[0, 2, 4]'
+    },
+  ];
 
-        <label htmlFor="username">Enter your Email</label>
-        <input type="text" placeholder="Email" value={email} onChange={handleEmailChange} />
 
-        <label htmlFor="password">Enter your Password</label>
-        <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
-        
-        <button type="button" className="login-button" onClick={signIn}>
-          <Link to='/login' className="login">Sign up</Link>
-        </button>
+const beginnerJavaQuestions = [
+    {
+      question: '1. What is Java?',
+      options: ['A programming language', 'A coffee brand', 'A type of car', 'A country'],
+      correctAnswer: 'A programming language'
+    },
+    {
+      question: '2. How do you print "Hello, World!" in Java?',
+      options: ['System.out.print("Hello, World!");', 'console.log("Hello, World!");', 'print("Hello, World!");', 'echo "Hello, World!";'],
+      correctAnswer: 'System.out.print("Hello, World!");'
+    },
+    {
+      question: '3. What symbol is used for comments in Java?',
+      options: ['//', '#', '/* */', '--'],
+      correctAnswer: '//'
+    },
+    {
+      question: '4. Which of the following is a Java data type?',
+      options: ['number', 'int', 'boolean', 'All of the above'],
+      correctAnswer: 'All of the above'
+    },
+    {
+      question: '5. How do you declare a variable in Java?',
+      options: ['var', 'let', 'const', 'None of the above'],
+      correctAnswer: 'None of the above'
+    },
+    {
+      question: '6. What is the purpose of a `for` loop in Java?',
+      options: ['Declaring functions', 'Declaring variables', 'Iterating over iterable objects', 'Loop iteration'],
+      correctAnswer: 'Loop iteration'
+    },
+    {
+      question: '7. What is the output of `System.out.println(3 == 3);`?',
+      options: ['true', 'false', 'Error', 'None of the above'],
+      correctAnswer: 'true'
+    },
+    {
+      question: '8. Which of the following is NOT a valid Java data structure?',
+      options: ['List', 'Dictionary', 'Tuple', 'Array'],
+      correctAnswer: 'Tuple'
+    },
+    {
+      question: '9. What does the `null` keyword represent in Java?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
+    },
+    {
+      question: '10. What is the output of `System.out.println(Boolean.parseBoolean("True"));`?',
+      options: ['true', 'false', 'Error', 'None of the above'],
+      correctAnswer: 'true'
+    },
+    {
+      question: '11. Which method is used to convert a string to an integer in Java?',
+      options: ['parseInt()', 'parseFloat()', 'String.toInt()', 'Number.parseInt()'],
+      correctAnswer: 'parseInt()'
+    },
+    {
+      question: '12. What is the purpose of the `this` keyword in Java?',
+      options: ['Refers to the current object', 'Refers to the parent object', 'Refers to the global object', 'Refers to the child object'],
+      correctAnswer: 'Refers to the current object'
+    },
+    {
+      question: '13. What is the result of `System.out.println(typeof null);`?',
+      options: ['null', 'object', 'undefined', 'string'],
+      correctAnswer: 'object'
+    },
+    {
+      question: '14. Which built-in method removes the last element from an array and returns that element?',
+      options: ['pop()', 'shift()', 'push()', 'unshift()'],
+      correctAnswer: 'pop()'
+    },
+    {
+      question: '15. What is the output of `System.out.println(0 == "0");`?',
+      options: ['true', 'false', 'Error', 'None of the above'],
+      correctAnswer: 'false'
+    },
+  ];
 
-        {loginClicked && (!email.trim() || !password.trim()) && (
-          <p style={{ color: 'red' }}>Please fill all the fields.</p>
-        )}
 
-        <div className="signup-link">
-          <p>Already have an account? <Link to="/login">Login</Link></p>
-        </div>
-      </form>
-    </div>
-  );
-};
+const questions = [
+    {
+      question: '1. What is the purpose of the `final` keyword in Java?',
+      options: ['To indicate that a variable cannot be modified', 'To declare a constant', 'To prevent inheritance', 'All of the above'],
+      correctAnswer: 'All of the above'
+    },
+    {
+      question: '2. What does the `static` keyword mean in Java?',
+      options: ['It means that the variable or method belongs to the class, not instances of the class', 'It means that the variable or method can only be accessed by a single thread at a time', 'It means that the variable or method can be accessed from any other class', 'It means that the variable or method cannot be modified'],
+      correctAnswer: 'It means that the variable or method belongs to the class, not instances of the class'
+    },
+    {
+      question: '3. What is method overloading in Java?',
+      options: ['It allows a subclass to provide a specific implementation of a method that is already provided by its superclass', 'It allows a class to have multiple methods with the same name but different parameters', 'It allows a class to inherit properties and behavior from another class', 'It allows a method to have multiple return types'],
+      correctAnswer: 'It allows a class to have multiple methods with the same name but different parameters'
+    },
+    {
+      question: '4. What is method overriding in Java?',
+      options: ['It allows a subclass to provide a specific implementation of a method that is already provided by its superclass', 'It allows a class to have multiple methods with the same name but different parameters', 'It allows a class to inherit properties and behavior from another class', 'It allows a method to have multiple return types'],
+      correctAnswer: 'It allows a subclass to provide a specific implementation of a method that is already provided by its superclass'
+    },
+    {
+      question: '5. What is the purpose of the `super` keyword in Java?',
+      options: ['To refer to the superclass of the current class', 'To call a method from the superclass', 'To create an instance of a subclass', 'To initialize an object'],
+      correctAnswer: 'To refer to the superclass of the current class'
+    },
+    {
+      question: '6. What is the difference between `==` and `.equals()` in Java?',
+      options: ['`==` compares object references, while `.equals()` compares object contents', '`==` compares primitive data types, while `.equals()` compares objects', '`==` is used for assignment, while `.equals()` is used for comparison', '`==` is used for comparison, while `.equals()` is used for assignment'],
+      correctAnswer: '`==` compares object references, while `.equals()` compares object contents'
+    },
+    {
+      question: '7. What is the purpose of the `try`, `catch`, and `finally` blocks in Java exception handling?',
+      options: ['To handle errors and exceptions', 'To create custom exceptions', 'To terminate the program', 'To ignore exceptions'],
+      correctAnswer: 'To handle errors and exceptions'
+    },
+    {
+      question: '8. What is the difference between checked and unchecked exceptions in Java?',
+      options: ['Checked exceptions must be declared in the method signature or caught using a try-catch block, while unchecked exceptions do not have this requirement', 'Unchecked exceptions must be declared in the method signature or caught using a try-catch block, while checked exceptions do not have this requirement', 'Checked exceptions occur at compile-time, while unchecked exceptions occur at runtime', 'Unchecked exceptions occur at compile-time, while checked exceptions occur at runtime'],
+      correctAnswer: 'Checked exceptions must be declared in the method signature or caught using a try-catch block, while unchecked exceptions do not have this requirement'
+    },
+    {
+      question: '9. What is the purpose of the `this` keyword in Java constructors?',
+      options: ['To refer to the current class instance', 'To refer to the parent class instance', 'To refer to the subclass instance', 'To refer to the superclass instance'],
+      correctAnswer: 'To refer to the current class instance'
+    },
+    {
+      question: '10. What is the purpose of the `instanceof` operator in Java?',
+      options: ['To check if an object belongs to a specific class or interface', 'To create a new instance of a class', 'To check if two objects are equal', 'To convert a primitive data type into an object'],
+      correctAnswer: 'To check if an object belongs to a specific class or interface'
+    },
+    {
+      question: '11. What is the difference between an abstract class and an interface in Java?',
+      options: ['An abstract class can have concrete methods, while an interface cannot', 'An interface can have fields, while an abstract class cannot', 'An abstract class can implement multiple interfaces, while an interface cannot extend a class', 'An interface can have constructors, while an abstract class cannot'],
+      correctAnswer: 'An abstract class can have concrete methods, while an interface cannot'
+    },
+    {
+      question: '12. What is a lambda expression in Java?',
+      options: ['A way to define anonymous functions', 'A way to declare variables', 'A way to define classes', 'A way to handle exceptions'],
+      correctAnswer: 'A way to define anonymous functions'
+    },
+    {
+      question: '13. What is the purpose of the `default` keyword in Java interfaces?',
+      options: ['To define a default implementation for a method in an interface', 'To specify the default package for a class', 'To declare a default constructor for a class', 'To specify default values for instance variables'],
+      correctAnswer: 'To define a default implementation for a method in an interface'
+    },
+    {
+      question: '14. What is the purpose of the `package` statement in Java?',
+      options: ['To declare a package for a class', 'To import classes from other packages', 'To specify the default package for a class', 'To specify default values for instance variables'],
+      correctAnswer: 'To declare a package for a class'
+    },
+    {
+      question: '15. What is the purpose of the `enum` keyword in Java?',
+      options: ['To declare an enumeration', 'To declare a variable', 'To declare a method', 'To declare a class'],
+      correctAnswer: 'To declare an enumeration'
+    },
+  ];
 
-export default Auth;
+
+const questions = [
+    {
+      question: '1. What is method overloading in Java?',
+      options: ['It allows a subclass to provide a specific implementation of a method that is already provided by its superclass', 'It allows a class to have multiple methods with the same name but different parameters', 'It allows a class to inherit properties and behavior from another class', 'It allows a method to have multiple return types'],
+      correctAnswer: 'It allows a class to have multiple methods with the same name but different parameters'
+    },
+    {
+      question: '2. What is method overriding in Java?',
+      options: ['It allows a subclass to provide a specific implementation of a method that is already provided by its superclass', 'It allows a class to have multiple methods with the same name but different parameters', 'It allows a class to inherit properties and behavior from another class', 'It allows a method to have multiple return types'],
+      correctAnswer: 'It allows a subclass to provide a specific implementation of a method that is already provided by its superclass'
+    },
+    {
+      question: '3. What is the purpose of the `super` keyword in Java?',
+      options: ['To refer to the superclass of the current class', 'To call a method from the superclass', 'To create an instance of a subclass', 'To initialize an object'],
+      correctAnswer: 'To refer to the superclass of the current class'
+    },
+    {
+      question: '4. What is the difference between `==` and `.equals()` in Java?',
+      options: ['`==` compares object references, while `.equals()` compares object contents', '`==` compares primitive data types, while `.equals()` compares objects', '`==` is used for assignment, while `.equals()` is used for comparison', '`==` is used for comparison, while `.equals()` is used for assignment'],
+      correctAnswer: '`==` compares object references, while `.equals()` compares object contents'
+    },
+    {
+      question: '5. What is the purpose of the `try`, `catch`, and `finally` blocks in Java exception handling?',
+      options: ['To handle errors and exceptions', 'To create custom exceptions', 'To terminate the program', 'To ignore exceptions'],
+      correctAnswer: 'To handle errors and exceptions'
+    },
+    {
+      question: '6. What is the difference between checked and unchecked exceptions in Java?',
+      options: ['Checked exceptions must be declared in the method signature or caught using a try-catch block, while unchecked exceptions do not have this requirement', 'Unchecked exceptions must be declared in the method signature or caught using a try-catch block, while checked exceptions do not have this requirement', 'Checked exceptions occur at compile-time, while unchecked exceptions occur at runtime', 'Unchecked exceptions occur at compile-time, while checked exceptions occur at runtime'],
+      correctAnswer: 'Checked exceptions must be declared in the method signature or caught using a try-catch block, while unchecked exceptions do not have this requirement'
+    },
+    {
+      question: '7. What is the purpose of the `this` keyword in Java constructors?',
+      options: ['To refer to the current class instance', 'To refer to the parent class instance', 'To refer to the subclass instance', 'To refer to the superclass instance'],
+      correctAnswer: 'To refer to the current class instance'
+    },
+    {
+      question: '8. What is the purpose of the `instanceof` operator in Java?',
+      options: ['To check if an object belongs to a specific class or interface', 'To create a new instance of a class', 'To check if two objects are equal', 'To convert a primitive data type into an object'],
+      correctAnswer: 'To check if an object belongs to a specific class or interface'
+    },
+    {
+      question: '9. What is the difference between an abstract class and an interface in Java?',
+      options: ['An abstract class can have concrete methods, while an interface cannot', 'An interface can have fields, while an abstract class cannot', 'An abstract class can implement multiple interfaces, while an interface cannot extend a class', 'An interface can have constructors, while an abstract class cannot'],
+      correctAnswer: 'An abstract class can have concrete methods, while an interface cannot'
+    },
+    {
+      question: '10. What is a lambda expression in Java?',
+      options: ['A way to define anonymous functions', 'A way to declare variables', 'A way to define classes', 'A way to handle exceptions'],
+      correctAnswer: 'A way to define anonymous functions'
+    },
+    {
+      question: '11. What is the purpose of the `default` keyword in Java interfaces?',
+      options: ['To define a default implementation for a method in an interface', 'To specify the default package for a class', 'To declare a default constructor for a class', 'To specify default values for instance variables'],
+      correctAnswer: 'To define a default implementation for a method in an interface'
+    },
+    {
+      question: '12. What is the purpose of the `package` statement in Java?',
+      options: ['To declare a package for a class', 'To import classes from other packages', 'To specify the default package for a class', 'To specify default values for instance variables'],
+      correctAnswer: 'To declare a package for a class'
+    },
+    {
+      question: '13. What is the purpose of the `enum` keyword in Java?',
+      options: ['To declare an enumeration', 'To declare a variable', 'To declare a method', 'To declare a class'],
+      correctAnswer: 'To declare an enumeration'
+    },
+    {
+      question: '14. What is the purpose of the `finally` block in Java exception handling?',
+      options: ['To execute code regardless of whether an exception occurs or not', 'To catch exceptions', 'To throw exceptions', 'To ignore exceptions'],
+      correctAnswer: 'To execute code regardless of whether an exception occurs or not'
+    },
+    {
+      question: '15. What is the purpose of the `synchronized` keyword in Java?',
+      options: ['To ensure that only one thread can access a block of code at a time', 'To create a new thread', 'To synchronize the clocks of multiple threads', 'To prevent inheritance'],
+      correctAnswer: 'To ensure that only one thread can access a block of code at a time'
+    },
+  ];
+
+
+const questions = [
+    {
+      question: '1. What is a closure in JavaScript?',
+      options: ['A function that has access to its own scope', 'A function that has access to the scope in which it was created, even after that scope has closed', 'A function that takes another function as an argument', 'A function that returns a new function'],
+      correctAnswer: 'A function that has access to the scope in which it was created, even after that scope has closed'
+    },
+    {
+      question: '2. What is prototypal inheritance in JavaScript?',
+      options: ['A way of creating objects based on a blueprint', 'A way of sharing methods and properties between objects', 'A way of accessing the prototype of an object', 'A way of extending built-in objects'],
+      correctAnswer: 'A way of sharing methods and properties between objects'
+    },
+    {
+      question: '3. What is the Event Loop in JavaScript?',
+      options: ['A loop that handles asynchronous callbacks', 'A loop that handles events in the DOM', 'A loop that handles recursive functions', 'A loop that handles AJAX requests'],
+      correctAnswer: 'A loop that handles asynchronous callbacks'
+    },
+    {
+      question: '4. What is the difference between `==` and `===` in JavaScript?',
+      options: ['`==` compares values only, while `===` compares both values and types', '`==` is used for assignment, while `===` is used for comparison', '`==` compares objects, while `===` compares primitives', '`==` is used for strict comparison, while `===` is used for loose comparison'],
+      correctAnswer: '`==` compares values only, while `===` compares both values and types'
+    },
+    {
+      question: '5. What is the purpose of the `bind` method in JavaScript?',
+      options: ['To bind a function to an event', 'To bind a function to a specific context, so it can be called with that context', 'To bind a function to a specific argument', 'To bind a function to a specific variable'],
+      correctAnswer: 'To bind a function to a specific context, so it can be called with that context'
+    },
+    {
+      question: '6. What is the difference between `null` and `undefined` in JavaScript?',
+      options: ['`null` is an object, while `undefined` is a primitive', '`null` represents the intentional absence of any object value, while `undefined` represents a variable that has been declared but not assigned a value', '`null` represents a variable that has been declared but not assigned a value, while `undefined` represents the intentional absence of any object value', '`null` and `undefined` are the same'],
+      correctAnswer: '`null` represents the intentional absence of any object value, while `undefined` represents a variable that has been declared but not assigned a value'
+    },
+    {
+      question: '7. What is the purpose of the `forEach` method in JavaScript?',
+      options: ['To iterate over the elements of an array', 'To create a new array with the results of calling a provided function on every element in the calling array', 'To check if all elements in an array pass a test', 'To remove the last element from an array and return that element'],
+      correctAnswer: 'To iterate over the elements of an array'
+    },
+    {
+      question: '8. What is a higher-order function in JavaScript?',
+      options: ['A function that returns another function', 'A function that takes another function as an argument, or returns a function, or both', 'A function that can be called without any arguments', 'A function that can only be called with a specific context'],
+      correctAnswer: 'A function that takes another function as an argument, or returns a function, or both'
+    },
+    {
+      question: '9. What is a pure function in JavaScript?',
+      options: ['A function that does not have any side effects', 'A function that returns a new function', 'A function that modifies the state of its arguments', 'A function that takes another function as an argument'],
+      correctAnswer: 'A function that does not have any side effects'
+    },
+    {
+      question: '10. What is the difference between `let`, `const`, and `var` in JavaScript?',
+      options: ['`let` and `const` have block scope, while `var` has function scope', '`let` and `const` are hoisted to the top of their block, while `var` is hoisted to the top of its function', '`let` and `const` cannot be reassigned, while `var` can', 'There is no difference between `let`, `const`, and `var`'],
+      correctAnswer: '`let` and `const` have block scope, while `var` has function scope'
+    },
+    {
+      question: '11. What is the purpose of the `reduce` method in JavaScript?',
+      options: ['To iterate over the elements of an array', 'To create a new array with the results of calling a provided function on every element in the calling array', 'To check if all elements in an array pass a test', 'To reduce the array to a single value'],
+      correctAnswer: 'To reduce the array to a single value'
+    },
+    {
+      question: '12. What is a generator function in JavaScript?',
+      options: ['A function that returns a new function', 'A function that takes another function as an argument', 'A function that can yield multiple values', 'A function that can only be called with a specific context'],
+      correctAnswer: 'A function that can yield multiple values'
+    },
+    {
+      question: '13. What is the purpose of the `Promise` object in JavaScript?',
+      options: ['To represent a value that may be available now, or in the future, or never', 'To handle asynchronous operations', 'To create a new array with the results of calling a provided function on every element in the calling array', 'To reduce the array to a single value'],
+      correctAnswer: 'To represent a value that may be available now, or in the future, or never'
+    },
+    {
+      question: '14. What is the purpose of the `async` and `await` keywords in JavaScript?',
+      options: ['To define a function that returns a promise', 'To handle asynchronous operations', 'To create a new array with the results of calling a provided function on every element in the calling array', 'To reduce the array to a single value'],
+      correctAnswer: 'To handle asynchronous operations'
+    },
+    {
+      question: '15. What is a rest parameter in JavaScript?',
+      options: ['A parameter that represents an unknown number of arguments as an array', 'A parameter that represents an unknown number of arguments as individual values', 'A parameter that has a default value', 'A parameter that has to be provided by the caller'],
+      correctAnswer: 'A parameter that represents an unknown number of arguments as an array'
+    },
+  ];
+
+
+Sure, I'll compile all the questions along with examples, explanations, and coding challenges for Python, Java, and JavaScript into a single text file. Here's how you can structure it:
+
+plaintext
+
+=== Python ===
+
+1. What is Python?
+   - Python is a high-level, interpreted programming language known for its simplicity and readability.
+
+2. What are some features of Python?
+   - Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+   - Python is widely used in various domains, including web development, data science, artificial intelligence, scientific computing, and more.
+
+3. How do you define a function in Python?
+   - Functions in Python are defined using the `def` keyword, followed by the function name and parameters.
+
+   Example:
+
+
+def greet(name):
+return "Hello, " + name + "!"
+
+vbnet
+Copy code
+
+Explanation: In this example, we define a function called `greet` that takes a parameter `name` and returns a greeting message.
+
+Coding Challenge: Write a function to calculate the factorial of a number using recursion.
+
+4. What is a list comprehension in Python?
+- A list comprehension is a concise way to create lists in Python by applying an expression to each item in an iterable.
+
+Example:
+
+
+squares = [x**2 for x in range(10)]
+
+vbnet
+Copy code
+
+Explanation: This list comprehension generates a list of squares of numbers from 0 to 9.
+
+Coding Challenge: Write a list comprehension to create a list of even numbers from 1 to 20.
+
+5. What is the purpose of indentation in Python?
+- Indentation is used to define blocks of code, such as in loops and conditional statements.
+
+Example:
+
+
+if x > 0:
+print("Positive")
+else:
+print("Negative")
+
+vbnet
+Copy code
+
+Explanation: In this example, the `print` statements are indented to indicate that they are part of the `if` and `else` blocks.
+
+Coding Challenge: Write a function to check if a given number is prime.
+
+6. What is the output of `print(3 + 2 * 5)` in Python?
+- The output is 13.
+
+7. How do you open a file in Python?
+- Files can be opened using the `open()` function, specifying the file path and mode (e.g., 'r' for read, 'w' for write).
+
+Example:
+
+
+with open('file.txt', 'r') as f:
+content = f.read()
+
+vbnet
+Copy code
+
+Explanation: This example opens a file named 'file.txt' in read mode and reads its contents into the variable `content`.
+
+Coding Challenge: Write a function to count the number of words in a text file.
+
+8. What is the purpose of the `__init__` method in Python classes?
+- The `__init__` method is a special method in Python classes that is called when a new instance of the class is created. It is used to initialize the object's attributes.
+
+Example:
+
+
+class Person:
+def init(self, name, age):
+self.name = name
+self.age = age
+
+typescript
+Copy code
+
+Explanation: In this example, the `__init__` method initializes the `name` and `age` attributes of a `Person` object.
+
+Coding Challenge: Write a class to represent a Circle with attributes for radius and methods to calculate its area and circumference.
+
+9. What is a lambda function in Python?
+- A lambda function is a small anonymous function defined using the `lambda` keyword. It can take any number of arguments but can only have one expression.
+
+Example:
+
+
+double = lambda x: x * 2
+
+vbnet
+Copy code
+
+Explanation: This lambda function doubles the input value `x`.
+
+Coding Challenge: Use a lambda function to sort a list of tuples based on the second element.
+
+10. How do you handle exceptions in Python?
+ - Exceptions in Python can be handled using try-except blocks to catch and handle errors gracefully.
+
+ Example:
+ ```
+ try:
+     result = 10 / 0
+ except ZeroDivisionError:
+     print("Division by zero!")
+ ```
+
+ Explanation: In this example, a ZeroDivisionError is caught and handled by printing a custom error message.
+
+ Coding Challenge: Write a function to read a number from the user and handle ValueError if the input is not a valid number.
+
+11. What is the purpose of the `zip()` function in Python?
+ - The `zip()` function in Python is used to combine multiple iterables (e.g., lists, tuples) into a single iterable of tuples.
+
+ Example:
+ ```
+ names = ['Alice', 'Bob', 'Charlie']
+ ages = [25, 30, 35]
+ for name, age in zip(names, ages):
+     print(name, age)
+ ```
+
+ Explanation: This example iterates over two lists `names` and `ages` simultaneously using the `zip()` function.
+
+ Coding Challenge: Write a function to transpose a matrix represented as a list of lists.
+
+12. What is a decorator in Python?
+ - A decorator is a function that takes another function as an argument and extends its behavior without modifying its code.
+
+ Example:
+ ```
+ def my_decorator(func):
+     def wrapper():
+         print("Something is happening before the function is called.")
+         func()
+         print("Something is happening after the function is called.")
+     return wrapper
+
+ @my_decorator
+ def say_hello():
+     print("Hello!")
+ ```
+
+ Explanation: In this example, the `my_decorator` function is a decorator that adds behavior before and after the `say_hello` function is called.
+
+ Coding Challenge: Write a decorator to measure the execution time of a function.
+
+13. What is the difference between `==` and `is` operators in Python?
+ - The `==` operator compares the values of two objects, while the `is` operator checks if two objects refer to the
+
+
+const questions = [
+    {
+      question: '1. What is the result of `typeof null`?',
+      options: ['object', 'null', 'undefined', 'string'],
+      correctAnswer: 'object'
+    },
+    {
+      question: '2. What does the `map` method do in JavaScript?',
+      options: ['Applies a function to each element of an array and returns a new array with the results', 'Iterates over the elements of an array and returns the first element that satisfies a condition', 'Removes the last element from an array and returns that element', 'Adds new elements to the beginning of an array and returns the new length'],
+      correctAnswer: 'Applies a function to each element of an array and returns a new array with the results'
+    },
+    {
+      question: '3. What is the purpose of the `filter` method in JavaScript?',
+      options: ['Creates a new array with all elements that pass a test', 'Applies a function to each element of an array and returns a new array with the results', 'Iterates over the elements of an array and returns the first element that satisfies a condition', 'Removes the last element from an array and returns that element'],
+      correctAnswer: 'Creates a new array with all elements that pass a test'
+    },
+    {
+      question: '4. What does the `reduce` method do in JavaScript?',
+      options: ['Reduces the array to a single value', 'Applies a function to each element of an array and returns a new array with the results', 'Iterates over the elements of an array and returns the first element that satisfies a condition', 'Removes the last element from an array and returns that element'],
+      correctAnswer: 'Reduces the array to a single value'
+    },
+    {
+      question: '5. What is the purpose of the `find` method in JavaScript?',
+      options: ['Returns the value of the first element in an array that satisfies a provided condition', 'Applies a function to each element of an array and returns a new array with the results', 'Creates a new array with all elements that pass a test', 'Removes the last element from an array and returns that element'],
+      correctAnswer: 'Returns the value of the first element in an array that satisfies a provided condition'
+    },
+    {
+      question: '6. What is the difference between `==` and `===` in JavaScript?',
+      options: ['`==` performs type coercion, while `===` does not', '`==` compares both value and type, while `===` only compares value', '`==` is used for strict comparison, while `===` is used for loose comparison', '`==` is used for assignment, while `===` is used for comparison'],
+      correctAnswer: '`==` performs type coercion, while `===` does not'
+    },
+    {
+      question: '7. What is the purpose of the `Object.keys()` method in JavaScript?',
+      options: ['Returns an array of a given object\'s own enumerable property names', 'Returns the value of the first element in an array that satisfies a provided condition', 'Creates a new array with all elements that pass a test', 'Removes the last element from an array and returns that element'],
+      correctAnswer: 'Returns an array of a given object\'s own enumerable property names'
+    },
+    {
+      question: '8. What is the difference between `let` and `const` in JavaScript?',
+      options: ['`let` allows reassignment, while `const` does not', '`let` is block-scoped, while `const` is function-scoped', '`let` is used for constants, while `const` is used for variables', '`let` creates a new variable, while `const` creates a new constant'],
+      correctAnswer: '`let` allows reassignment, while `const` does not'
+    },
+    {
+      question: '9. What is the purpose of the `startsWith()` method in JavaScript?',
+      options: ['Checks whether a string starts with a specified substring', 'Returns the index within the calling String object of the first occurrence of the specified value', 'Splits a string object into an array of strings by separating the string into substrings', 'Converts a string to lowercase letters'],
+      correctAnswer: 'Checks whether a string starts with a specified substring'
+    },
+    {
+      question: '10. What does the `splice()` method do in JavaScript?',
+      options: ['Changes the contents of an array by removing or replacing existing elements and/or adding new elements', 'Applies a function to each element of an array and returns a new array with the results', 'Iterates over the elements of an array and returns the first element that satisfies a condition', 'Removes the last element from an array and returns that element'],
+      correctAnswer: 'Changes the contents of an array by removing or replacing existing elements and/or adding new elements'
+    },
+    {
+      question: '11. What is the result of `console.log(3 + 2 + "7")`?',
+      options: ['57', '12', '327', 'Error'],
+      correctAnswer: '57'
+    },
+    {
+      question: '12. What is the result of `console.log("20" - 5)`?',
+      options: ['15', '25', 'Error', 'null'],
+      correctAnswer: '15'
+    },
+    {
+      question: '13. What is the purpose of the `Math.random()` method in JavaScript?',
+      options: ['Returns a random number between 0 (inclusive) and 1 (exclusive)', 'Returns the square root of a number', 'Returns the value of a base expression to a specified exponent', 'Returns the integer part of a number'],
+      correctAnswer: 'Returns a random number between 0 (inclusive) and 1 (exclusive)'
+    },
+    {
+      question: '14. What is the result of `console.log(typeof NaN)`?',
+      options: ['number', 'NaN', 'string', 'null'],
+      correctAnswer: 'number'
+    },
+    {
+      question: '15. What is the purpose of the `Array.isArray()` method in JavaScript?',
+      options: ['Returns true if a variable is an array, false otherwise', 'Returns the index within the calling String object of the first occurrence of the specified value', 'Returns a Boolean value indicating whether the array has no elements', 'Returns the character at the specified index in a string'],
+      correctAnswer: 'Returns true if a variable is an array, false otherwise'
+    },
+  ];
+
+
