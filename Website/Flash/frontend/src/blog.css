@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body{
     color: aliceblue;
 }
@@ -92,4 +93,81 @@ body{
     overflow-y: auto;
   }
   
+>>>>>>> Stashed changes
+=======
+.createPostPage {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cpConatiner {
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 25%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.inputGp {
+  margin-bottom: 20px;
+}
+
+.inputGp label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputGp input,
+.inputGp textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.buttonContainer {
+  
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blogsContainer {
+  width: 45%;
+  margin-top: 5%;
+  margin-right: 2%;
+  overflow-y: auto;
+}
+
+.blogPost {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.blogPost h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.blogPost p {
+  margin-bottom: 5px;
+
+}
+
+.viewMoreBtn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.viewMoreBtn:hover {
+  background-color: #0056b3;
+}
 >>>>>>> Stashed changes

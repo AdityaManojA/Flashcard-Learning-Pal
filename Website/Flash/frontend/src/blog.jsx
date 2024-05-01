@@ -172,7 +172,7 @@ export default function Blog() {
 
       </div>
       {/* Display fetched blogs */}
-      <h2>blogs</h2>
+     
       <div className="blogsContainer">
         {blogs.length === 0 ? <p>No blogs found</p>
           :
