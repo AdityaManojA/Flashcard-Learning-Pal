@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
 import './Python.css'; 
+import React, { useEffect, useState } from "react";
+import { auth, db } from "../src/config/firebase"; 
+import { setDoc, collection, doc } from "firebase/firestore"; // Import collection and doc here
+import { set } from "firebase/database";
 
 function BeginnerQuizJS() {
+ 
   const questions = [
     {
       question: '1. What does "JS" stand for in JavaScript?',
@@ -80,8 +84,51 @@ function BeginnerQuizJS() {
     },
   ];
 
+
+
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [userId, setUserId] = useState(null); 
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        setUserId(user.uid);
+        console.log("User authenticated, userId:", user.uid); // Verify userId is set
+      } else {
+        console.log("No user is signed in.");
+      }
+    });
+  
+    return () => unsubscribe();
+  }, []);
+  
+const storeScore = async (quizName, score, userId) => {
+ if (!userId) {
+    console.error("User is not authenticated.");
+    return;
+ }
+
+ const timestamp = new Date().toISOString();
+ const documentName = `${quizName}_${timestamp}`;
+ const scoresCollection = collection(db, `users/${userId}/scores`);
+ const scoreDocRef = doc(scoresCollection, documentName);
+ console.log("Score to be stored:", score);
+ try {
+    await setDoc(scoreDocRef, {
+      quizName: quizName,
+      score: score,
+      timestamp: timestamp,
+    });
+    console.log("Score saved successfully.");
+    
+ } catch (error) {
+    console.error("Error saving score:", error);
+ }
+};
+
+
 
   const handleAnswerSelect = (selectedAnswer) => {
     const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
@@ -89,6 +136,13 @@ function BeginnerQuizJS() {
       setScore(prevScore => prevScore + 1);
     }
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+    console.log("currentQuestionIndex:", currentQuestionIndex);
+    console.log("questions.length:", questions.length);
+    console.log("userId:", userId);
+if (currentQuestionIndex >= ((questions.length)-1) && userId) {
+ console.log("User ID:", userId); // Add this line to check the userId value
+ storeScore("BeginnerQuizJS", score, userId);
+}
   };
 
   return (

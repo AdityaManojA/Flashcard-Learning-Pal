@@ -5,7 +5,7 @@ import { setDoc, collection, doc } from "firebase/firestore"; // Import collecti
 import { set } from "firebase/database";
 
 function ModerateQuizPython() {
-  const pythonQuestions = [
+  const questions = [
     {
       question: '1. What is the correct way to comment a single line in Python?',
       options: ['#', '//', '/* */', '--'],

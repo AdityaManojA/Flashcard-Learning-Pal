@@ -5,81 +5,81 @@ import { setDoc, collection, doc } from "firebase/firestore"; // Import collecti
 import { set } from "firebase/database";
 
 function BeginnerQuizPython() {
-  const easyPythonQuestions = [
+  const questions = [
     {
-      question: '1. What is Python?',
-      options: ['A snake species', 'A programming language', 'A type of pasta', 'A fruit'],
-      correctAnswer: 'A programming language'
+      question: '1. What is the purpose of a lambda function in Python?',
+      options: ['To declare a variable', 'To create an anonymous function', 'To define a class', 'To import modules'],
+      correctAnswer: 'To create an anonymous function'
     },
     {
-      question: '2. How do you print "Hello, World!" in Python?',
-      options: ['console.log("Hello, World!")', 'print("Hello, World!")', 'echo "Hello, World!"', 'printf("Hello, World!")'],
-      correctAnswer: 'print("Hello, World!")'
+      question: '2. What is the output of `print(2 ** 3 ** 2)`?',
+      options: ['64', '512', '72', '96'],
+      correctAnswer: '512'
     },
     {
-      question: '3. What symbol is used for comments in Python?',
-      options: ['//', '#', '/* */', '--'],
-      correctAnswer: '#'
+      question: '3. Which of the following is a correct way to open a file in Python and automatically close it after use?',
+      options: ['file.open("filename.txt", "r")', 'open("filename.txt", "r").close()', 'with open("filename.txt", "r") as file:', 'open("filename.txt", "r")'],
+      correctAnswer: 'with open("filename.txt", "r") as file:'
     },
     {
-      question: '4. Which of the following is a Python data type?',
-      options: ['number', 'int', 'boolean', 'All of the above'],
-      correctAnswer: 'All of the above'
+      question: '4. What does the `zip()` function in Python do?',
+      options: ['Combines two lists into a dictionary', 'Returns a list of tuples, where each tuple contains the i-th element from each of the argument sequences', 'Unzips a file', 'Finds the longest common substring between two strings'],
+      correctAnswer: 'Returns a list of tuples, where each tuple contains the i-th element from each of the argument sequences'
     },
     {
-      question: '5. How do you declare a variable in Python?',
-      options: ['var', 'let', 'const', 'None of the above'],
-      correctAnswer: 'None of the above'
+      question: '5. What is the purpose of the `__init__` method in Python classes?',
+      options: ['To initialize a variable', 'To define a constructor', 'To create a new instance of a class', 'To delete an object'],
+      correctAnswer: 'To define a constructor'
     },
     {
-      question: '6. What is the purpose of a `for` loop in Python?',
-      options: ['Declaring functions', 'Declaring variables', 'Iterating over iterable objects', 'Defining classes'],
-      correctAnswer: 'Iterating over iterable objects'
+      question: '6. How do you raise a custom exception in Python?',
+      options: ['throw CustomException()', 'raise CustomException()', 'exception CustomException()', 'raise_exception CustomException()'],
+      correctAnswer: 'raise CustomException()'
     },
     {
-      question: '7. What is the output of `print(3 == 3)`?',
+      question: '7. What is the output of `print(list(range(0, -5, -1)))`?',
+      options: ['[0, -1, -2, -3, -4]', '[-1, -2, -3, -4]', '[0, -1, -2, -3, -4, -5]', '[]'],
+      correctAnswer: '[0, -1, -2, -3, -4]'
+    },
+    {
+      question: '8. What is the result of `print(4 // 3)`?',
+      options: ['1.33', '1.0', '1', '0.75'],
+      correctAnswer: '1'
+    },
+    {
+      question: '9. How do you remove an item from a set in Python?',
+      options: ['set.remove()', 'set.delete()', 'set.discard()', 'set.pop()'],
+      correctAnswer: 'set.discard()'
+    },
+    {
+      question: '10. What does the `super()` function do in Python?',
+      options: ['Calls a method from the superclass', 'Returns the superclass of a class', 'Creates a superclass', 'Calls a method from the subclass'],
+      correctAnswer: 'Calls a method from the superclass'
+    },
+    {
+      question: '11. What is the purpose of the `*args` and `**kwargs` in Python function definitions?',
+      options: ['To specify required arguments', 'To accept any number of positional and keyword arguments', 'To define default arguments', 'To access class attributes'],
+      correctAnswer: 'To accept any number of positional and keyword arguments'
+    },
+    {
+      question: '12. What is the output of `print(isinstance(3, object))`?',
       options: ['True', 'False', 'Error', 'None of the above'],
       correctAnswer: 'True'
     },
     {
-      question: '8. Which of the following is NOT a valid Python data structure?',
-      options: ['List', 'Dictionary', 'Tuple', 'Array'],
-      correctAnswer: 'Array'
+      question: '13. What does the `__str__` method do in Python?',
+      options: ['Converts an object to a string', 'Converts a string to an object', 'Compares two objects', 'Deletes an object'],
+      correctAnswer: 'Converts an object to a string'
     },
     {
-      question: '9. What does the `None` keyword represent in Python?',
-      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
-      correctAnswer: 'Nothing'
+      question: '14. What is the purpose of the `@staticmethod` decorator in Python?',
+      options: ['To define a static method', 'To define a class method', 'To override a method', 'To inherit a method'],
+      correctAnswer: 'To define a static method'
     },
     {
-      question: '10. What is the output of `print(bool("True"))`?',
-      options: ['True', 'False', 'Error', 'None of the above'],
-      correctAnswer: 'True'
-    },
-    {
-      question: '11. What is the correct way to check if a value is in a list in Python?',
-      options: ['if x in list:', 'if x = list:', 'if x == list:', 'if x has list:'],
-      correctAnswer: 'if x in list:'
-    },
-    {
-      question: '12. How do you open a file in Python for reading?',
-      options: ['file.open("filename.txt", "r")', 'open("filename.txt", "r")', 'file.read("filename.txt")', 'read("filename.txt")'],
-      correctAnswer: 'open("filename.txt", "r")'
-    },
-    {
-      question: '13. Which built-in function is used to get the length of a list in Python?',
-      options: ['size()', 'count()', 'length()', 'len()'],
-      correctAnswer: 'len()'
-    },
-    {
-      question: '14. What is the result of `print(0 == False)`?',
-      options: ['True', 'False', 'Error', 'None of the above'],
-      correctAnswer: 'True'
-    },
-    {
-      question: '15. What is the output of `print("Python"[1:4])`?',
-      options: ['Py', 'yth', 'thon', 'P'],
-      correctAnswer: 'yth'
+      question: '15. What is the output of `print([i for i in range(5) if i % 2 == 0])`?',
+      options: ['[0, 2, 4]', '[1, 3]', '[0, 1, 2, 3, 4]', '[2, 4]'],
+      correctAnswer: '[0, 2, 4]'
     },
   ];
 
@@ -138,7 +138,7 @@ const storeScore = async (quizName, score, userId) => {
     console.log("userId:", userId);
 if (currentQuestionIndex >= ((questions.length)-1) && userId) {
  console.log("User ID:", userId); // Add this line to check the userId value
- storeScore("BeginnerPythonQuiz", score, userId);
+ storeScore("ExpertPythonQuiz", score, userId);
 }
   };
 

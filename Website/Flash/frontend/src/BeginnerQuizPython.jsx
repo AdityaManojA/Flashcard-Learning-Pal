@@ -5,7 +5,7 @@ import { setDoc, collection, doc } from "firebase/firestore"; // Import collecti
 import { set } from "firebase/database";
 
 function BeginnerQuizPython() {
-  const easyPythonQuestions = [
+  const  questions = [
     {
       question: '1. What is Python?',
       options: ['A snake species', 'A programming language', 'A type of pasta', 'A fruit'],
