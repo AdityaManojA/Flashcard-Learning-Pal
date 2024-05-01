@@ -132,8 +132,10 @@ const storeScore = async (quizName, score, userId) => {
       setScore(prevScore => prevScore + 1);
     }
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-
-if (currentQuestionIndex >= questions.length && userId) {
+    console.log("currentQuestionIndex:", currentQuestionIndex);
+    console.log("questions.length:", questions.length);
+    console.log("userId:", userId);
+if (currentQuestionIndex >= ((questions.length)-1) && userId) {
  console.log("User ID:", userId); // Add this line to check the userId value
  storeScore("ModeratePythonQuiz", score, userId);
 }
