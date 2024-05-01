@@ -1,87 +1,131 @@
-import React, { useState } from 'react';
-import './Python.css';
+import './Python.css'; 
+import React, { useEffect, useState } from "react";
+import { auth, db } from "../src/config/firebase"; 
+import { setDoc, collection, doc } from "firebase/firestore"; // Import collection and doc here
+import { set } from "firebase/database";
 
-function PythonQuizPage() {
-  const questions = [
+function BeginnerQuizPython() {
+  const easyPythonQuestions = [
     {
-      question: '1. What is the output of the following code snippet?\n\nx = 5\ny = 3\nprint(x * y)',
-      options: ['8', '15', '53', 'Error'],
-      correctAnswer: '15'
+      question: '1. What is Python?',
+      options: ['A snake species', 'A programming language', 'A type of pasta', 'A fruit'],
+      correctAnswer: 'A programming language'
     },
     {
-      question: '2. What will the following code output?\n\nfruits = ["apple", "banana", "cherry"]\nprint(fruits[-2])',
-      options: ['banana', 'apple', 'cherry', 'IndexError'],
-      correctAnswer: 'apple'
+      question: '2. How do you print "Hello, World!" in Python?',
+      options: ['console.log("Hello, World!")', 'print("Hello, World!")', 'echo "Hello, World!"', 'printf("Hello, World!")'],
+      correctAnswer: 'print("Hello, World!")'
     },
     {
-      question: '3. What is the correct way to declare a dictionary in Python?',
-      options: ['{1: "one", 2: "two", 3: "three"}', '[1, 2, 3]', '("one", "two", "three")', '<1, 2, 3>'],
-      correctAnswer: '{1: "one", 2: "two", 3: "three"}'
+      question: '3. What symbol is used for comments in Python?',
+      options: ['//', '#', '/* */', '--'],
+      correctAnswer: '#'
     },
     {
-      question: '4. What is the output of the following code snippet?\n\nx = "python"\nprint(x[::-1])',
-      options: ['python', 'nohtyp', 'pytho', 'Error'],
-      correctAnswer: 'nohtyp'
+      question: '4. Which of the following is a Python data type?',
+      options: ['number', 'int', 'boolean', 'All of the above'],
+      correctAnswer: 'All of the above'
     },
     {
-      question: '5. What will be the output of the following code snippet?\n\nx = [1, 2, 3]\nprint(x[:-1])',
-      options: ['[1, 2]', '[1, 2, 3]', '[2, 3]', '[1, 3]'],
-      correctAnswer: '[1, 2]'
+      question: '5. How do you declare a variable in Python?',
+      options: ['var', 'let', 'const', 'None of the above'],
+      correctAnswer: 'None of the above'
     },
     {
-      question: '6. How can you remove all leading and trailing whitespace in a string variable `x` in Python?',
-      options: ['x.trim()', 'x.strip()', 'strip(x)', 'x.clean()'],
-      correctAnswer: 'x.strip()'
+      question: '6. What is the purpose of a `for` loop in Python?',
+      options: ['Declaring functions', 'Declaring variables', 'Iterating over iterable objects', 'Defining classes'],
+      correctAnswer: 'Iterating over iterable objects'
     },
     {
-      question: '7. What is the output of the following code snippet?\n\nx = 5\ny = 2\nprint(x // y)',
-      options: ['2.5', '2', '2.0', 'Error'],
-      correctAnswer: '2'
+      question: '7. What is the output of `print(3 == 3)`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
     },
     {
-      question: '8. Which of the following is a correct way to check if a key exists in a dictionary in Python?',
-      options: ['if key in dictionary:', 'if key exists dictionary:', 'if dictionary has key:', 'if key is in dictionary:'],
-      correctAnswer: 'if key in dictionary:'
+      question: '8. Which of the following is NOT a valid Python data structure?',
+      options: ['List', 'Dictionary', 'Tuple', 'Array'],
+      correctAnswer: 'Array'
     },
     {
-      question: '9. What will be the output of the following code snippet?\n\nx = True\ny = False\nprint(x and y)',
-      options: ['True', 'False', 'Error', 'None'],
-      correctAnswer: 'False'
+      question: '9. What does the `None` keyword represent in Python?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
     },
     {
-      question: '10. What is the output of the following code snippet?\n\nx = [1, 2, 3]\nprint(x[3])',
-      options: ['1', '2', '3', 'IndexError'],
-      correctAnswer: 'IndexError'
+      question: '10. What is the output of `print(bool("True"))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
     },
     {
-      question: '11. What will the following code output?\n\nx = "python"\nprint(x.capitalize())',
-      options: ['Python', 'python', 'PYTHON', 'pYTHON'],
-      correctAnswer: 'Python'
+      question: '11. What is the correct way to check if a value is in a list in Python?',
+      options: ['if x in list:', 'if x = list:', 'if x == list:', 'if x has list:'],
+      correctAnswer: 'if x in list:'
     },
     {
-      question: '12. Which of the following is NOT a valid variable name in Python?',
-      options: ['my_var', 'myVar', 'MyVar', '2Var'],
-      correctAnswer: '2Var'
+      question: '12. How do you open a file in Python for reading?',
+      options: ['file.open("filename.txt", "r")', 'open("filename.txt", "r")', 'file.read("filename.txt")', 'read("filename.txt")'],
+      correctAnswer: 'open("filename.txt", "r")'
     },
     {
-      question: '13. What will the following code output?\n\nx = [1, 2, 3]\nprint(x[-1])',
-      options: ['1', '2', '3', 'Error'],
-      correctAnswer: '3'
+      question: '13. Which built-in function is used to get the length of a list in Python?',
+      options: ['size()', 'count()', 'length()', 'len()'],
+      correctAnswer: 'len()'
     },
     {
-      question: '14. What is the result of the following code snippet?\n\nx = 10\ny = "10"\nprint(x + y)',
-      options: ['20', '1010', 'Error', '101'],
-      correctAnswer: 'Error'
+      question: '14. What is the result of `print(0 == False)`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
     },
     {
-      question: '15. What will the following code output?\n\nx = "Hello"\nprint(x[1])',
-      options: ['H', 'e', 'l', 'o'],
-      correctAnswer: 'e'
+      question: '15. What is the output of `print("Python"[1:4])`?',
+      options: ['Py', 'yth', 'thon', 'P'],
+      correctAnswer: 'yth'
     },
   ];
 
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [userId, setUserId] = useState(null); 
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        setUserId(user.uid);
+        console.log("User authenticated, userId:", user.uid); // Verify userId is set
+      } else {
+        console.log("No user is signed in.");
+      }
+    });
+  
+    return () => unsubscribe();
+  }, []);
+  
+const storeScore = async (quizName, score, userId) => {
+ if (!userId) {
+    console.error("User is not authenticated.");
+    return;
+ }
+
+ const timestamp = new Date().toISOString();
+ const documentName = `${quizName}_${timestamp}`;
+ const scoresCollection = collection(db, `users/${userId}/scores`);
+ const scoreDocRef = doc(scoresCollection, documentName);
+ console.log("Score to be stored:", score);
+ try {
+    await setDoc(scoreDocRef, {
+      quizName: quizName,
+      score: score,
+      timestamp: timestamp,
+    });
+    console.log("Score saved successfully.");
+    
+ } catch (error) {
+    console.error("Error saving score:", error);
+ }
+};
+
+
 
   const handleAnswerSelect = (selectedAnswer) => {
     const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
@@ -89,10 +133,17 @@ function PythonQuizPage() {
       setScore(prevScore => prevScore + 1);
     }
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+    console.log("currentQuestionIndex:", currentQuestionIndex);
+    console.log("questions.length:", questions.length);
+    console.log("userId:", userId);
+if (currentQuestionIndex >= ((questions.length)-1) && userId) {
+ console.log("User ID:", userId); // Add this line to check the userId value
+ storeScore("BeginnerPythonQuiz", score, userId);
+}
   };
 
   return (
-    <div className='Python-quiz'>
+    <div className='JavaScript-quiz'>
       <div className='quiz-container'>
         {currentQuestionIndex < questions.length ? (
           <>
@@ -111,4 +162,4 @@ function PythonQuizPage() {
   );
 }
 
-export default PythonQuizPage;
+export default BeginnerQuizPython;

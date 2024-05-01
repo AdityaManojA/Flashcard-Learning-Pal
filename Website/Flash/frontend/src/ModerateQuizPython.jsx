@@ -5,83 +5,84 @@ import { setDoc, collection, doc } from "firebase/firestore"; // Import collecti
 import { set } from "firebase/database";
 
 function ModerateQuizPython() {
-  const questions = [
+  const pythonQuestions = [
     {
-      question: '1. What does "JS" stand for in JavaScript?',
-      options: ['Java Source', 'JavaScript', 'Java Script', 'Joint Source'],
-      correctAnswer: 'JavaScript'
+      question: '1. What is the correct way to comment a single line in Python?',
+      options: ['#', '//', '/* */', '--'],
+      correctAnswer: '#'
     },
     {
-      question: '2. Which symbol is used for single-line comments in JavaScript?',
-      options: ['//', '#', '/* */', '--'],
-      correctAnswer: '//'
+      question: '2. How do you declare a variable in Python?',
+      options: ['var', 'int', 'String', 'None of the above'],
+      correctAnswer: 'None of the above'
     },
     {
-      question: '3. What is the output of `console.log(typeof [])`?',
-      options: ['Array', 'object', 'undefined', 'null'],
-      correctAnswer: 'object'
+      question: '3. What is the output of `print(type([]))`?',
+      options: ['List', 'Tuple', 'Dict', 'None of the above'],
+      correctAnswer: 'List'
     },
     {
-      question: '4. What will be the result of the following code: `5 + "5"`?',
+      question: '4. What will be the result of the following code: `5 + "5"` in Python?',
       options: ['55', '10', '5', 'Error'],
-      correctAnswer: '55'
+      correctAnswer: 'Error'
     },
     {
-      question: '5. Which keyword is used to declare a variable in JavaScript?',
-      options: ['var', 'int', 'String', 'let'],
-      correctAnswer: 'var'
+      question: '5. Which keyword is used to define a function in Python?',
+      options: ['def', 'function', 'define', 'func'],
+      correctAnswer: 'def'
     },
     {
-      question: '6. What is the purpose of the `let` keyword in JavaScript?',
-      options: ['Declaring constants', 'Declaring functions', 'Declaring variables', 'Loop iteration'],
-      correctAnswer: 'Declaring variables'
+      question: '6. What is the purpose of the `for` loop in Python?',
+      options: ['Declaring constants', 'Declaring functions', 'Iterating over iterable objects', 'Loop iteration'],
+      correctAnswer: 'Iterating over iterable objects'
     },
     {
-      question: '7. What is the output of `console.log(3 === "3")`?',
-      options: ['true', 'false', 'Error', 'null'],
-      correctAnswer: 'false'
+      question: '7. What is the output of `print(3 == "3")`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'False'
     },
     {
-      question: '8. Which of the following is NOT a JavaScript data type?',
-      options: ['number', 'float', 'boolean', 'string'],
-      correctAnswer: 'float'
+      question: '8. Which of the following is NOT a valid Python data type?',
+      options: ['float', 'double', 'boolean', 'str'],
+      correctAnswer: 'double'
     },
     {
-      question: '9. What does NaN stand for in JavaScript?',
-      options: ['Not a Number', 'No and No', 'New and New', 'None and None'],
-      correctAnswer: 'Not a Number'
+      question: '9. What does the `None` keyword represent in Python?',
+      options: ['Nothing', 'Zero', 'Empty string', 'Undefined'],
+      correctAnswer: 'Nothing'
     },
     {
-      question: '10. What is the output of `console.log(Boolean("false"))`?',
-      options: ['true', 'false', 'Error', 'null'],
-      correctAnswer: 'true'
+      question: '10. What is the output of `print(bool("false"))`?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'True'
     },
     {
-      question: '11. Which function is used to parse a string to an integer in JavaScript?',
-      options: ['parseInt()', 'parseFloat()', 'String.toInt()', 'Number.parseInt()'],
-      correctAnswer: 'parseInt()'
+      question: '11. Which function is used to convert a string to an integer in Python?',
+      options: ['int()', 'float()', 'str()', 'None of the above'],
+      correctAnswer: 'int()'
     },
     {
-      question: '12. What is the purpose of the `this` keyword in JavaScript?',
+      question: '12. What is the purpose of the `self` keyword in Python?',
       options: ['Refers to the current object', 'Refers to the parent object', 'Refers to the global object', 'Refers to the child object'],
       correctAnswer: 'Refers to the current object'
     },
     {
-      question: '13. What is the result of `typeof undefined`?',
-      options: ['undefined', 'object', 'null', 'string'],
-      correctAnswer: 'undefined'
+      question: '13. What is the result of `type(None)` in Python?',
+      options: ['NoneType', 'object', 'None', 'str'],
+      correctAnswer: 'NoneType'
     },
     {
-      question: '14. Which built-in method removes the last element from an array and returns that element?',
-      options: ['pop()', 'shift()', 'push()', 'unshift()'],
+      question: '14. Which built-in method removes the last element from a list and returns it?',
+      options: ['pop()', 'remove()', 'append()', 'extend()'],
       correctAnswer: 'pop()'
     },
     {
-      question: '15. What is the output of `console.log(0 == "0")`?',
-      options: ['true', 'false', 'Error', 'null'],
-      correctAnswer: 'true'
+      question: '15. What is the output of `print(0 == "0")` in Python?',
+      options: ['True', 'False', 'Error', 'None of the above'],
+      correctAnswer: 'False'
     },
   ];
+
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
