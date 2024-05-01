@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import { db } from './config/firebase';
 import './Python.css'; 
+import React, { useEffect, useState } from "react";
+import { auth, db } from "../src/config/firebase"; // Adjust the import path as necessary
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { set } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 
-function BeginnerQuizJS() {
+function ModerateQuizPython() {
   const questions = [
     {
       question: '1. What does "JS" stand for in JavaScript?',
@@ -83,13 +88,48 @@ function BeginnerQuizJS() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
 
-  const handleAnswerSelect = (selectedAnswer) => {
-    const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
-    if (isCorrect) {
-      setScore(prevScore => prevScore + 1);
-    }
-    setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+  const storeScore = async (quizName, score) => {
+    console.log("Attempting to store score...");
+    const userId = auth.currentUser.uid;
+    console.log("User ID:", userId);
+
+    if (!userId) {
+      console.error("User is not authenticated.");
+      return;
+   }
+  
+   const timestamp = new Date().toISOString();
+   const documentName = `${quizName}_${timestamp}`;
+   const scoresCollection = collection(db, `users/${userId}/scores`);
+   const scoreDocRef = doc(scoresCollection, documentName);
+  
+   try {
+      await setDoc(scoreDocRef, {
+        quizName: quizName,
+        score: score,
+        timestamp: timestamp,
+      });
+      console.log("Score saved successfully.");
+   } catch (error) {
+      console.error("Error saving score:", error);
+   }
   };
+
+  // Example of manually triggering the function
+
+ const handleAnswerSelect = (selectedAnswer) => {
+  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correctAnswer;
+  if (isCorrect) {
+     setScore(prevScore => prevScore + 1);
+  }
+  setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+ 
+  // Check if the quiz is completed
+  if (currentQuestionIndex >= questions.length) {
+     // Automatically store the score when the quiz is completed
+     storeScore("ModeratePythonQuiz", score); // Adjust the quiz name as necessary
+  }
+ };
 
   return (
     <div className='JavaScript-quiz'>
@@ -110,5 +150,4 @@ function BeginnerQuizJS() {
     </div>
   );
 }
-
-export default BeginnerQuizJS;
+export default ModerateQuizPython;
