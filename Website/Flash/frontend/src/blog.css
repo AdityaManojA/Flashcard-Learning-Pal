@@ -1,65 +1,79 @@
-body{
-  color: aliceblue;
-}
-.createPostPage {
-  height: calc(100vh - 80px);
-  display: grid;
-  place-items: center;
-}
-
-.cpContainer {
-  width: 500px;
-  height: auto;
+body {
+  color: black;
+ }
+ 
+ .createPostPage {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
-  background-color: black;
+  height: calc(100vh - 80px);
+ }
+ 
+ .createPostContainer,
+ .fetchedBlogsContainer {
+  width: 45%; /* Adjust the width as needed */
+  padding: 20px;
+
   border-radius: 12px;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
-}
-
-.cpContainer h1 {
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  max-height: calc(100vh - 100px); /* Adjust the max-height as needed */
+ }
+ 
+ .createPostContainer h1,
+ .fetchedBlogsContainer h2 {
   text-align: center;
-}
-
-.cpContainer .inputGp {
+ }
+ 
+ .createPostContainer .inputGp,
+ .fetchedBlogsContainer .inputGp {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-}
-.inputGp label {
+ }
+ 
+ .createPostContainer .inputGp label,
+ .fetchedBlogsContainer .inputGp label {
   color: rgb(163, 134, 232);
   font-size: 15px;
-  margin-right: 10px ;
-}
-.inputGp input {
+  margin-right: 10px;
+ }
+ 
+ .createPostContainer .inputGp input,
+ .fetchedBlogsContainer .inputGp input,
+ .createPostContainer .inputGp textarea,
+ .fetchedBlogsContainer .inputGp textarea {
   font-size: 18px;
-  -webkit-text-fill-color: aliceblue;
+  -webkit-text-fill-color: black;
   border-radius: 2px;
   padding: 5px;
-}
-
-.inputGp1 textarea{
-  align-items: bottom;
-    width: 300px;
-    height:400px;
-    margin-top: 20px;
-}
-
-.inputGp textarea {
-  height: 150px;
-}
-
-.cpContainer button {
-  margin-top: 20px;
-  height: 30px;
-  width: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-input,
-textarea {
-  margin-top: 5px;
-}
+  margin-top: 5px;
+ }
+ 
+ .createPostContainer .inputGp textarea {
+  width: 100%; /* Make the textarea full width */
+  height: 5em; /* Set the default height to 5 lines */
+  resize: none; /* Prevent resizing */
+  color: black; /* Set the text color to black */
+ }
+ 
+ .modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+ }
+ 
+ .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+ }
