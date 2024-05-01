@@ -4,6 +4,10 @@ body{
 .createPostPage {
     height: calc(100vh - 80px);
     display: grid;
+<<<<<<< Updated upstream
+=======
+    overflow-y: auto;
+>>>>>>> Stashed changes
     place-items: center;
   }
   
@@ -23,7 +27,11 @@ body{
   }
   
   .cpContainer .inputGp {
+<<<<<<< Updated upstream
     margin-top: 30px;
+=======
+    margin-top:30px;
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: column;
   }
@@ -61,4 +69,27 @@ body{
   input,
   textarea {
     margin-top: 5px;
+<<<<<<< Updated upstream
   }
+=======
+  }
+  .createPostPage {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cpContainer {
+    width: 45%;
+    padding: 20px;
+  }
+  
+  .blogsContainer {
+    width: 45%;
+    padding: 20px;
+    
+    border: 1px solid #ccc;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+>>>>>>> Stashed changes
