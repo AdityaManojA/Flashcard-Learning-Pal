@@ -9,7 +9,7 @@ export default function Codeenhancer() {
 
         title="Chatbot"
         width="100%"
-        style={{height: '100%', minHeight: '900px'}}
+        style={{height: '100%', minHeight: '800px'}}
         
       ></iframe>
     </div>
