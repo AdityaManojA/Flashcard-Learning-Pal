@@ -1,95 +1,64 @@
 body{
-    color: aliceblue;
+  color: aliceblue;
 }
 .createPostPage {
-    height: calc(100vh - 80px);
-    display: grid;
-<<<<<<< Updated upstream
-=======
-    overflow-y: auto;
->>>>>>> Stashed changes
-    place-items: center;
-  }
-  
-  .cpContainer {
-    width: 500px;
-    height: auto;
-    padding: 20px;
-    background-color: black;
-    border-radius: 12px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cpContainer h1 {
-    text-align: center;
-  }
-  
-  .cpContainer .inputGp {
-<<<<<<< Updated upstream
-    margin-top: 30px;
-=======
-    margin-top:30px;
->>>>>>> Stashed changes
-    display: flex;
-    flex-direction: column;
-  }
-  .inputGp label {
-    color: rgb(163, 134, 232);
-    font-size: 15px;
-    margin-right: 10px ;
-  }
-  .inputGp input {
-    font-size: 18px;
-    -webkit-text-fill-color: aliceblue;
-    border-radius: 2px;
-    padding: 5px;
-  }
-  
-  .inputGp1 textarea{
-    align-items: bottom;
-      width: 300px;
-      height:400px;
-      margin-top: 20px;
-  }
-  
-  .inputGp textarea {
-    height: 150px;
-  }
-  
-  .cpContainer button {
+  height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+}
+
+.cpContainer {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  background-color: black;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpContainer h1 {
+  text-align: center;
+}
+
+.cpContainer .inputGp {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.inputGp label {
+  color: rgb(163, 134, 232);
+  font-size: 15px;
+  margin-right: 10px ;
+}
+.inputGp input {
+  font-size: 18px;
+  -webkit-text-fill-color: aliceblue;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.inputGp1 textarea{
+  align-items: bottom;
+    width: 300px;
+    height:400px;
     margin-top: 20px;
-    height: 30px;
-    width: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-  }
-  input,
-  textarea {
-    margin-top: 5px;
-<<<<<<< Updated upstream
-  }
-=======
-  }
-  .createPostPage {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .cpContainer {
-    width: 45%;
-    padding: 20px;
-  }
-  
-  .blogsContainer {
-    width: 45%;
-    padding: 20px;
-    
-    border: 1px solid #ccc;
-    max-height: 400px;
-    overflow-y: auto;
-  }
-  
->>>>>>> Stashed changes
+}
+
+.inputGp textarea {
+  height: 150px;
+}
+
+.cpContainer button {
+  margin-top: 20px;
+  height: 30px;
+  width: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+input,
+textarea {
+  margin-top: 5px;
+  }
