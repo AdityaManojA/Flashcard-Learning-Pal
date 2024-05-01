@@ -25,6 +25,7 @@ import BackgroundAnimation from './BackgroundAnimation.jsx';
 import './index.css';
 import './Styles.css'; 
 import Userdata from './Userdata.jsx';
+import Codeenhancer from './Codeenhancer.jsx';
 
 
 function Navbar() {
@@ -46,11 +47,12 @@ function Navbar() {
         <ul className="navbar-links">
           <li><a href="/home">Home</a></li>
           <li><a href="/courses">Courses</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/Codeenhancer">Code enhancer</a></li>
+          <li><a href="/AI">CHATBOT</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
           <li><a href="/userdata">Profile</a></li>
-          <li><a href="/AI">Chat with AI !</a></li>
           <li><a href="/">Logout</a></li>
         </ul>
       </div>
@@ -86,7 +88,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/courses/java" element={<JavaPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/userdata" element={<Userdata/>}/>
-
+        <Route path="/Codeenhancer" element={<Codeenhancer/>}/>
       </Routes>
     </Router>
   </React.StrictMode>
