@@ -50,7 +50,8 @@ function Navbar() {
           <li><a href="/contact">Contact</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/userdata">Profile</a></li>
-          <li><a href="/AI">Chat with AI</a></li>
+          <li><a href="/AI">Chat with AI !</a></li>
+          <li><a href="/">Logout</a></li>
         </ul>
       </div>
     </nav>

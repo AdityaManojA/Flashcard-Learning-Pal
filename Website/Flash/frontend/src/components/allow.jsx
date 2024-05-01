@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../config/firebase'; 
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import '../login.css';
 
 export const Allow = () => {
   const [email, setEmail] = useState("");
@@ -68,7 +69,7 @@ export const Allow = () => {
         )}
 
         <div className="signup-link">
-          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+          <p style={{ color: 'black' }}>Don't have an account? <Link className='black' to="/signup" >Sign up</Link></p>
         </div>
       </form>
     </div>

@@ -24,7 +24,7 @@ h2{
     cursor: pointer;
   }
   p{
-    color: #F2E9E4;
+    color: #000000;
   }
   .custom-button:hover {
     transform: translate(-0.05em, -0.05em);
@@ -38,7 +38,7 @@ h2{
   
 .question{
     padding: 3%;
-    color: #F2E9E4;
+    color: #040404;
 }
 .options{
     padding: 5%;
@@ -50,12 +50,12 @@ h2{
 h1{
   text-align: center;
   padding: 10;
-  color: #F2E9E4;
+  color: #000000;
 }
 
 
 .end-message{
   padding: 20px;
   font-size:30px;
-  color: #F2E9E4;
+  color: #000000;
  }

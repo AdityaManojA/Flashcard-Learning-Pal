@@ -64,7 +64,7 @@ export const Auth = () => {
         )}
 
         <div className="signup-link">
-          <p>Already have an account? <Link to="/login">Login</Link></p>
+          <p  style={{ color: 'black' }}>Already have an account? <Link className="black" to="/login">Login</Link></p>
         </div>
       </form>
     </div>

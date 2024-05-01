@@ -17,6 +17,7 @@ body {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    color: #000000;
 }
 
 .background .shape {
@@ -40,6 +41,7 @@ body {
 
 form {
     height: auto;
+    color: #000000;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
@@ -58,7 +60,7 @@ form {
 
 form * {
     font-family: 'Poppins', sans-serif;
-    color: #ffffff;
+    color: #000000;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -70,6 +72,7 @@ form h3 {
     line-height: 42px;
     text-align: center;
     margin-bottom: 20px;
+    color: rgb(0, 0, 0);
 }
 
 label {
@@ -95,7 +98,7 @@ label {
 
 .login-button {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #e88c8c;
     color: #080710;
     padding: 15px 0;
     font-size: 18px;
@@ -112,13 +115,16 @@ label {
 input {
     height: 50px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
+    color: black !important;
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     padding: 0 10px;
     font-size: 14px;
     margin-top: 8px;
 }
-
+input.text{
+    color: #000000;
+}
 option {
     height: 50px;
     width: 100%;
@@ -130,7 +136,7 @@ option {
 }
 
 ::placeholder {
-    color: #e5e5e5;
+    color: #000000;
 }
 
 button {
@@ -176,4 +182,19 @@ button {
 
 .social div:hover {
     background-color: rgba(255, 255, 255, 0.47);
+}
+
+p{
+    color: #000000;
+}
+
+a.black{
+    color: #000000;
+}
+
+.username{
+    color: #000000;
+}
+text{
+    color: #000000;
 }
