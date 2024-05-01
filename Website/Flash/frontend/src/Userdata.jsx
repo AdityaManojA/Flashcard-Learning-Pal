@@ -9,51 +9,70 @@ function Userdata() {
  const [userId, setUserId] = useState(null);
 
  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      if (user) {
-        setUserId(user.uid);
-        console.log("User authenticated, userId:", user.uid);
-        fetchQuizScores(user.uid);
-      } else {
-        console.log("No user is signed in.");
-      }
-    });
+      const unsubscribe = auth.onAuthStateChanged(user => {
+        if (user) {
+          setUserId(user.uid);
+          console.log("User authenticated, userId:", user.uid);
+          fetchQuizScores(user.uid);
+        } else {
+          console.log("No user is signed in.");
+        }
+      });
 
-    return () => unsubscribe();
+      return () => unsubscribe();
  }, []);
 
  const fetchQuizScores = async (userId) => {
-    if (!userId) {
-      console.log("User ID is not provided.");
-      return;
-    }
+      if (!userId) {
+        console.log("User ID is not provided.");
+        return;
+      }
 
-    try {
-      const scoresCollectionRef = collection(db, `users/${userId}/scores`);
-      const scoresSnapshot = await getDocs(scoresCollectionRef);
-      const scoresList = scoresSnapshot.docs.map(doc => ({
-        quizName: doc.data().quizName,
-        score: doc.data().score,
-      }));
-      setQuizScores(scoresList);
-    } catch (error) {
-      console.error("Error fetching quiz scores: ", error);
-    }
+      try {
+        const scoresCollectionRef = collection(db, `users/${userId}/scores`);
+        const scoresSnapshot = await getDocs(scoresCollectionRef);
+        const scoresList = scoresSnapshot.docs.map(doc => ({
+          quizName: doc.data().quizName,
+          score: doc.data().score,
+        }));
+        setQuizScores(scoresList);
+      } catch (error) {
+        console.error("Error fetching quiz scores: ", error);
+      }
  };
 
  if (quizScores.length === 0) {
-    return <div>Loading...</div>;
+      return <div className="centered">Loading...</div>;
  }
 
+ // Group scores by quiz name and select the highest score for each quiz
+ const groupedScores = quizScores.reduce((acc, score) => {
+   if (!acc[score.quizName]) {
+     acc[score.quizName] = [];
+   }
+   acc[score.quizName].push(score.score);
+   return acc;
+ }, {});
+
+ const highestScores = Object.entries(groupedScores).map(([quizName, scores]) => ({
+   quizName,
+   score: Math.max(...scores),
+ }));
+
+ // Determine the lowest score among the highest scores
+ const lowestHighestScore = Math.min(...highestScores.map(score => score.score));
+
  return (
-    <div>
-      <h1>Quiz Scores</h1>
-      <ul>
-        {quizScores.map((score, index) => (
-          <li key={index}>{score.quizName}: {score.score}</li>
-        ))}
-      </ul>
-    </div>
+      <div className="userdata-container">
+        <h1 className="userdata-title">Quiz Scores</h1>
+        <ul className="userdata-list">
+          {highestScores.map((score, index) => (
+            <li key={index} className={`userdata-list-item ${score.score === lowestHighestScore ? 'userdata-list-item-lowest' : ''}`}>
+              {score.quizName}: {score.score}
+            </li>
+          ))}
+        </ul>
+      </div>
  );
 }
 

@@ -3,7 +3,7 @@ import './App.css';
 
 export default function About() {
   return (
-    <div>
+    < div className='about'>
       <h1 className='centered'>About Us</h1>
       
       <p className='about'>

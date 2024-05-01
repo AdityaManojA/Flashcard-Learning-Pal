@@ -26,12 +26,24 @@
     justify-content: center;
     
   }
-  h3{
-    color: #F2E9E4;
+  .black{
+    color: #011522;
   }
-  
+  h3{
+    color: #ffffff;
+  }
+  h1.welcome{
+    color: #011522;
+  }
+ .nameof{
+    color: #011522;
+  }
+p.welcome{
+    color: #011522;
+  }
   .centered {
     text-align: center;
+    color: #011522;
   }
   
   .about {
@@ -40,6 +52,7 @@
     padding-left: 5%;
     padding-right: 5%;
     font-family: 'poppinslight';
+    color: #011522;
   }
   
   .welcome {

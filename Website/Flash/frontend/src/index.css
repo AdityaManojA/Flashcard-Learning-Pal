@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color:#000000ed;
+  background-color:#f4dddded;
   margin: 0;
   padding: 0;
   font-family: "Poppins";
@@ -65,7 +65,7 @@ body {
  
 }
 h1 a {
-  color: #F2E9E4;
+  color: #d0cbc9;
   text-decoration: none;
 }
 h1 a:hover {

@@ -16,7 +16,7 @@ function Courses() {
     <div className='courses-container'>
       {coursesData.map((course, index) => (
         <div key={index} className='language-container'>
-          <h2>{course.name}</h2>
+          <h2 className='nameof'>{course.name}</h2>
           <div className='levels-container'>
             <div className='card'>
               <Link to={`/courses/${course.route}`}>
