@@ -200,20 +200,6 @@ function BeginnerQuizJS() {
       storeScore("BeginnerQuizJS", score, userId);
     }
   };
-  const displayResults = () => {
-    let resultsString = "";
-    userAnswers.forEach((answerObj, index) => {
-      resultsString += `Question ${index + 1}: ${
-        answerObj.question.question
-      }\n`;
-      resultsString += `Your answer: ${answerObj.answer}\n`;
-      if (!answerObj.isCorrect) {
-        resultsString += `Correct answer: ${answerObj.question.correctAnswer}\n`;
-      }
-    });
-    resultsString += `Total score: ${score} out of ${shuffledQuestions.length}`;
-    setResults(resultsString); // Update the results state with the results string
-  };
 
   return (
     <div className="JavaScript-quiz">

@@ -263,11 +263,7 @@ function BeginnerQuizJava() {
     const isCorrect =
       selectedAnswer === shuffledQuestions[currentQuestionIndex].correctAnswer;
     if (isCorrect) {
-      setScore((prevScore) => {
-        const newScore = prevScore + 1;
-        console.log("Updating score to:", newScore);
-        return newScore;
-      });
+      setScore((prevScore) => prevScore + 1); // Correctly update the score
     }
     setUserAnswers((prevAnswers) => [
       ...prevAnswers,
