@@ -1,5 +1,6 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 body{
     color: aliceblue;
 }
@@ -96,6 +97,8 @@ body{
   
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 .createPostPage {
   display: flex;
   justify-content: space-between;
@@ -108,7 +111,6 @@ body{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-
 }
 
 .inputGp {
@@ -139,7 +141,7 @@ body{
   width: 45%;
   margin-top: 5%;
   margin-right: 2%;
-  overflow-y: auto;
+  
 }
 
 .blogPost {
@@ -170,6 +172,7 @@ body{
 
 .viewMoreBtn:hover {
   background-color: #0056b3;
+<<<<<<< Updated upstream
 }
 >>>>>>> Stashed changes
 =======
@@ -252,4 +255,7 @@ body {
   border: 1px solid #888;
   width: 80%;
  }
+>>>>>>> Stashed changes
+=======
+}
 >>>>>>> Stashed changes
