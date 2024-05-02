@@ -1,20 +1,23 @@
-.Python-quiz{
+.Python-quiz {
     text-align: center;
     padding: 40px;
 }
+
 .button-container {
-  margin-top: 100px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 50px;
     padding: 5%;
-  }
-h2{
-  padding-bottom: 20px;
 }
+
+h2 {
+    padding-bottom: 20px;
+}
+
 .custom-button {
     background: #fbca1f;
-    font-family: inherit;
+    font-family: inherit; /* Inherit the font from the parent */
     padding: 0.6em 1.3em;
     font-weight: 900;
     font-size: 18px;
@@ -22,40 +25,53 @@ h2{
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
     cursor: pointer;
-  }
-  p{
-    color: #000000;
-  }
-  .custom-button:hover {
+    margin: 5px; /* Add some margin around each button */
+}
+
+.custom-button:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
-  }
-  
-  .custom-button:active {
+}
+
+.custom-button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-  }
-  
-.question{
-    padding: 3%;
-    color: #040404;
-}
-.options{
-    padding: 5%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 5%;
-}
-h1{
-  text-align: center;
-  padding: 10;
-  color: #000000;
 }
 
+.question, .options {
+    margin-bottom: 20px; /* Add space between questions and options */
+}
 
-.end-message{
-  padding: 20px;
-  font-size:30px;
-  color: #000000;
- }
+.end-message {
+    padding: 20px;
+    font-size: 15px;
+    color: #000000;
+    text-align: left; /* Ensure the end message is centered */
+}
+
+.quiz-container {
+    text-align: center;
+    padding: 40px;
+    max-height: 80vh; /* Adjust this value based on your needs */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 #f5f5f5; /* For Firefox */
+    font-family: 'Arial', sans-serif; /* A more readable font */
+    font-size: 16px; /* Adjust font size for better readability */
+    line-height: 1.6; /* Improve readability with more space between lines */
+}
+
+/* For Chrome, Safari, and Edge */
+.quiz-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.quiz-container::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.quiz-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+    border: 3px solid #f5f5f5;
+}

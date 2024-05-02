@@ -8,7 +8,7 @@ export default function AI() {
         src="https://www.chatbase.co/chatbot-iframe/5PLwGbV6LO4ygZlGIImOr"
         title="Chatbot"
         width="100%"
-        style={{height: '100%', minHeight: '800px'}}
+        style={{height: '100%', minHeight: '650px'}}
         
       ></iframe>
     </div>
