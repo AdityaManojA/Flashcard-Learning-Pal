@@ -147,47 +147,59 @@ function BeginnerQuizJS() {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [userAnswers, setUserAnswers] = useState([]); // Define userAnswers state and its setter
-  const [results, setResults] = useState(""); // Define results state and its setter
-  const [shuffledQuestions, setShuffledQuestions] = useState([]);
+  const [userId, setUserId] = useState(null);
 
-  // Function to shuffle an array
-  const shuffleArray = (array) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled.slice(0, 15); // Slice to the first 15 elements
-  };
-
-  // Shuffle questions on component mount
   useEffect(() => {
-    setShuffledQuestions(shuffleArray(questions));
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserId(user.uid);
+        console.log("User authenticated, userId:", user.uid); // Verify userId is set
+      } else {
+        console.log("No user is signed in.");
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
+
+  const storeScore = async (quizName, score, userId) => {
+    if (!userId) {
+      console.error("User is not authenticated.");
+      return;
+    }
+
+    const timestamp = new Date().toISOString();
+    const documentName = `${quizName}_${timestamp}`;
+    const scoresCollection = collection(db, `users/${userId}/scores`);
+    const scoreDocRef = doc(scoresCollection, documentName);
+    console.log("Score to be stored:", score);
+    try {
+      await setDoc(scoreDocRef, {
+        quizName: quizName,
+        score: score,
+        timestamp: timestamp,
+      });
+      console.log("Score saved successfully.");
+    } catch (error) {
+      console.error("Error saving score:", error);
+    }
+  };
 
   const handleAnswerSelect = (selectedAnswer) => {
     const isCorrect =
-      selectedAnswer === shuffledQuestions[currentQuestionIndex].correctAnswer;
+      selectedAnswer === questions[currentQuestionIndex].correctAnswer;
     if (isCorrect) {
       setScore((prevScore) => prevScore + 1);
     }
-    setUserAnswers((prevAnswers) => [
-      ...prevAnswers,
-      {
-        question: shuffledQuestions[currentQuestionIndex],
-        answer: selectedAnswer,
-        isCorrect,
-      },
-    ]);
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-
-    if (currentQuestionIndex >= shuffledQuestions.length - 1) {
-      // Display results after the last question
-      displayResults();
+    console.log("currentQuestionIndex:", currentQuestionIndex);
+    console.log("questions.length:", questions.length);
+    console.log("userId:", userId);
+    if (currentQuestionIndex >= questions.length - 1 && userId) {
+      console.log("User ID:", userId); // Add this line to check the userId value
+      storeScore("BeginnerQuizJS", score, userId);
     }
   };
-
   const displayResults = () => {
     let resultsString = "";
     userAnswers.forEach((answerObj, index) => {
@@ -206,32 +218,26 @@ function BeginnerQuizJS() {
   return (
     <div className="JavaScript-quiz">
       <div className="quiz-container">
-        {currentQuestionIndex < shuffledQuestions.length ? (
+        {currentQuestionIndex < questions.length ? (
           <>
             <div className="question">
-              {shuffledQuestions[currentQuestionIndex].question}
+              {questions[currentQuestionIndex].question}
             </div>
             <div className="options">
-              {shuffledQuestions[currentQuestionIndex].options.map(
-                (option, index) => (
-                  <button
-                    key={index}
-                    className="custom-button"
-                    onClick={() => handleAnswerSelect(option)}
-                  >
-                    {option}
-                  </button>
-                )
-              )}
+              {questions[currentQuestionIndex].options.map((option, index) => (
+                <button
+                  key={index}
+                  className="custom-button"
+                  onClick={() => handleAnswerSelect(option)}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
           </>
         ) : (
           <div className="end-message">
-            <p>Quiz completed!</p>
-            <p>
-              Your score: {score} out of {shuffledQuestions.length}
-            </p>
-            <pre>{results}</pre> {/* Display the results string */}
+            Quiz completed! Your score: {score} out of {questions.length}
           </div>
         )}
       </div>
