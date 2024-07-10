@@ -1,5 +1,15 @@
 body {
+  font-family: Arial, sans-serif; /* A clean, easy-to-read font */
+  line-height: 1.6; /* Improves readability */
   color: black;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px; /* Adds space under headings */
+}
+
+p {
+  margin-bottom: 10px; /* Adds space under paragraphs */
  }
  
  .createPostPage {
@@ -77,3 +87,37 @@ body {
   border: 1px solid #888;
   width: 80%;
  }
+
+.container {
+  max-width: 800px; /* Sets a maximum width for the content area */
+  margin: auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds space around the content */
+}
+
+.blog-post {
+  margin-bottom: 40px; /* Adds space between blog posts */
+}
+
+.comment {
+  margin-top: 20px; /* Adds space above comments */
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Smaller text on smaller screens */
+  }
+
+  .container {
+    padding: 10px; /* Less padding on small screens */
+  }
+
+  .createPostPage {
+    flex-direction: column; /* Stack containers vertically on smaller screens */
+  }
+
+  .createPostContainer,
+  .fetchedBlogsContainer {
+    width: 90%; /* Wider containers on small screens */
+    margin: auto; /* Center containers */
+  }
+}

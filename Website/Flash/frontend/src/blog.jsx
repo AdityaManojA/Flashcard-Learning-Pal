@@ -3,6 +3,12 @@ import './blog.css';
 import { auth, db } from "../src/config/firebase"; // Adjust the import path as necessary
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReply } from '@fortawesome/free-solid-svg-icons';
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export default function Blog() {
  const [title, setTitle] = useState("");
@@ -127,7 +133,6 @@ export default function Blog() {
     return replies.map((reply, replyIndex) => (
       <div key={replyIndex} style={{ marginLeft: '100px' }}>
         <p>{reply.text} - {reply.userEmail}</p>
-        
         {reply.replies && reply.replies.length > 0 && renderReplies(reply.replies)}
       </div>
     ));
@@ -152,29 +157,30 @@ export default function Blog() {
         <button onClick={() => addBlogPost(user?.uid, title, postText)}>Submit Chat</button>
       </div>
       <div className="fetchedBlogsContainer">
-        
         {blog.length === 0 ? <p>No blogs found</p>
           :
           blog.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) // Sort blogs by createdAt in descending order
             .slice(0, visibleBlogs)
             .map((blog, index) => (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }} key={index}>
-                <h2 style={{color:'black'}}>{blog.userEmail}</h2>
+                <h2 style={{ fontSize: '18px', color: '#333' }}>
+                  {capitalizeFirstLetter(blog.userEmail.split('@')[0])} {/* Capitalize the first letter */}
+                </h2>
                 <div key={index} className="blogPost" style={{ display: 'flex', flexDirection: 'row', gap: '20px', border: '1px solid #fff', borderRadius: '10px', padding: '10px' }}>
                  <h3 style={{color:'black'}}>{blog.title}</h3>
-                 <p>{blog.postText}</p>
+                 <p style={{ fontSize: '14px', color: '#666' }}>{blog.postText}</p>
                  <p>{new Date(blog.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>
                 </div>
                 <div>
                  {blog.comments.map((comment, commentIndex) => (
                     <div key={commentIndex} style={{margin:'10px'}}>
                       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <p>{comment.text} - {comment.userEmail}</p>
-                        <div onClick={() => {
-                          setShowModal(true);
-                          setReplyTargetId(comment.id); // This sets the ID of the comment you're replying to
-                          setCurrentBlogId(blog.id); // This sets the ID of the blog the comment belongs to
-                        }}>Reply</div>
+                        <p style={{fontSize: '12px'}}> {/* Adjusted font size here */ }
+                          {capitalizeFirstLetter(comment.userEmail.split('@')[0])} - {comment.userEmail}
+                        </p>
+                        <div onClick={() => { setShowModal(true); setReplyTargetId(comment.id); setCurrentBlogId(blog.id); }}>
+                          <FontAwesomeIcon icon={faReply} /> Reply
+                        </div>
                       </div>
                       {/* Render replies for each comment */}
                       {renderReplies(comment.replies)}
@@ -187,18 +193,18 @@ export default function Blog() {
         {visibleBlogs < blog.length && <button onClick={handleViewMore}>View More</button>}
       </div>
       {showModal && (
-        <div className="modal">
+        <div style={{ backgroundColor: '#f4f4f4', height: 'auto'}}>
           <div className="modal-content">
-            <h2 style={{ color: 'black' }}>Leave a Comment</h2>
+            <h2 style={{ color: 'black', fontSize: '24px' }}>Leave a Comment</h2>
             <textarea
               placeholder="Your comment here..."
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
-              style={{ width: '100%', height: '100px' }}
+              style={{ width: '100%', height: '150px', padding: '10px', borderRadius: '5px', fontSize: '16px' }}
             />
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
-              <button onClick={handleCommentSubmit}>Reply</button>
-              <button onClick={() => { setShowModal(false); setCurrentBlogId(); setReplyTargetId(null); }}>Close</button>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+              <button onClick={handleCommentSubmit} style={{ backgroundColor: '#007bff', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', cursor: 'pointer' }}>Reply</button>
+              <button onClick={() => { setShowModal(false); setCurrentBlogId(); setReplyTargetId(null); }} style={{ backgroundColor: '#dc3545', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', cursor: 'pointer' }}>Close</button>
             </div>
           </div>
         </div>
