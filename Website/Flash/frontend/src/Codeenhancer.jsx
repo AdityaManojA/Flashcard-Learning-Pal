@@ -8,7 +8,7 @@ export default function Codeenhancer() {
         src="https://www.chatbase.co/chatbot-iframe/1jlq1Vjw61B_1hh6Ar-vd"
         title="Chatbot"
         width="100%"
-        style={{ height: "100%", minHeight: "710px" }}
+        style={{ height: "100%", minHeight: "900px" }}
       ></iframe>
     </div>
   );

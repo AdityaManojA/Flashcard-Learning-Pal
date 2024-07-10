@@ -4,7 +4,7 @@ import './App.css';
 export default function About() {
   return (
     < div className='about'>
-      <h1 className='centered'>About Us</h1>
+      <h1 className='hi'>About Us</h1>
       
       <p className='about'>
         <strong>Our Story</strong><br />

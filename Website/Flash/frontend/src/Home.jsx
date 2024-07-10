@@ -13,21 +13,13 @@ function App() {
       <br></br>
 
       <p className="welcome">
-        Welcome to our dynamic coding learning platform! Whether you're a
-        beginner eager to dive into the world of programming or an experienced
-        coder looking to sharpen your skills, you've come to the right place.
-        Our comprehensive flashcard website offers a plethora of resources to
-        enhance your coding journey. Challenge yourself with interactive
-        quizzes, stay updated with informative blogs, and engage with our AI
-        chatbot for personalized assistance. Join our vibrant community of
-        learners today and embark on a rewarding path towards mastering coding
-        languages. Let's code, learn, and grow together!
+        Unlock a new world of learning with FLASH CARD PAL! Our platform transforms the way you acquire new skills, making it enjoyable, effective, and accessible for everyone. Dive into a vast collection of customizable flashcards, engage with interactive quizzes, and join a vibrant community of learners. Whether you're a beginner or an advanced user, our tools are designed to cater to your specific needs, ensuring a personalized and enriching learning experience. Start your journey today and let FLASH CARD PAL guide you towards achieving your language learning goals.
       </p>
 
       <div className="buttonka">
         <Link to="/courses">
           <button className="ui-btn">
-            <span>Go to Courses</span>
+            <span>START LEARNING! </span>
           </button>
         </Link>
       </div>
